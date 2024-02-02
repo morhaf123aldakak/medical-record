@@ -50,3 +50,4 @@ Route::post('update_ward/{id}',[WardBedController::class,'update_ward']);
 Route::post('update_bed/{id}',[WardBedController::class,'update_bed']);
 Route::get('delete_bed/{id}',[WardBedController::class,'delete_bed']);
 Route::get('numbers_patient_ward_admn',[WardBedController::class,'numbers_patient_ward_admn']);
+Route::post('add_admission',[WardBedController::class,'add_admission']);
