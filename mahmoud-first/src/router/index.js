@@ -23,9 +23,11 @@ import PatientsAdmissionsVue from "@/views/SecretaryDashboard/Admissions/Patient
 // Secretary add
 import AddPatientVue from "@/views/SecretaryDashboard/Patients/AddPatient.vue";
 import AddRoomVue from "@/views/SecretaryDashboard/Rooms/AddRoom.vue";
+import AddAdmission from "@/views/SecretaryDashboard/Admissions/AddAdmission.vue";
 // Secretary edit
 import EditPatientVue from "@/views/SecretaryDashboard/Patients/EditPatient.vue";
 import EditRoomVue from "@/views/SecretaryDashboard/Rooms/EditRoom.vue";
+import EditAdmission from "@/views/SecretaryDashboard/Admissions/EditAdmission.vue";
 
 const routes = [
   // login
@@ -122,6 +124,11 @@ const routes = [
     name: "AddRoom",
     component: AddRoomVue,
   },
+  {
+    path: "/Secretary-Add-Admission",
+    name: "SecretaryAddAdmission",
+    component: AddAdmission,
+  },
   // Secretary edit
   {
     path: "/Secretary-Edit-Patient",
@@ -132,6 +139,11 @@ const routes = [
     path: "/Secretary-Edit-Room",
     name: "EditRoom",
     component: EditRoomVue,
+  },
+  {
+    path: "/Secretary-Edit-Admission",
+    name: "SecretaryEditAdmission",
+    component: EditAdmission,
   },
 ];
 

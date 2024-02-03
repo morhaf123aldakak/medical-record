@@ -139,7 +139,7 @@ export default {
       router.push("/Secretary-Add-Admission");
     },
     editurl(id) {
-      router.push("/Secretary-Add-Admission?id=" + id);
+      router.push("/Secretary-Edit-Admission?id=" + id);
     },
   },
   mounted() {
