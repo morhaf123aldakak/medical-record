@@ -30,6 +30,18 @@
               >Departments</span
             ></router-link
           >
+          <router-link to="/Admin-Labs" class="sidebar-content router"
+            ><Icon class="mx-2" icon="medical-icon:i-laboratory" /><span
+              class="d-md-block d-none"
+              >Laboratories</span
+            ></router-link
+          >
+          <router-link to="/Admin-Specialists" class="sidebar-content router"
+            ><Icon class="mx-2" icon="game-icons:lab-coat" /><span
+              class="d-md-block d-none"
+              >Laboratory specialists</span
+            ></router-link
+          >
         </div>
       </div>
       <div class="col-9 d-flex justify-content-center mycontent">

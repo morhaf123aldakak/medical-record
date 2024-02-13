@@ -1,6 +1,6 @@
 <template>
-  <div class="admin-homeview">
-    <AdminSidebar>
+  <div class="doctor-homepage">
+    <DoctorSidebar>
       <div class="row my-3" style="height: fit-content">
         <div
           class="col-md-4 col-12 my-2"
@@ -10,63 +10,40 @@
           <button type="button" class="mybtn" @click="gotourl(element.url)">
             <div class="card text-start">
               <div class="card-body">
-                <h5 class="card-title d-flex align-items-center">
+                <h4 class="card-title d-flex align-items-center">
                   <Icon :icon="element.icon" class="mx-2" />{{ element.name }}
-                </h5>
+                </h4>
                 <p class="card-text">count: {{ element.count }}</p>
               </div>
             </div>
           </button>
         </div>
       </div>
-    </AdminSidebar>
+    </DoctorSidebar>
   </div>
 </template>
+
 <script>
-import { Icon } from "@iconify/vue";
-import AdminSidebar from "@/components/AdminDashboard/AdminSidebar.vue";
+import DoctorSidebar from "@/components/DoctorDashboard/DoctorSidebar.vue";
 import router from "@/router";
+import { Icon } from "@iconify/vue";
 export default {
-  name: "admin-homeview",
+  name: "doctor-homepage",
   data() {
     return {
       cards: {
         0: {
-          name: "Doctors",
-          icon: "fontisto:doctor",
+          name: "Patients",
+          icon: "mdi:patient",
           count: 5,
-          url: "/Admin-Doctors",
-        },
-        1: {
-          name: "Secretaries",
-          icon: "icon-park-outline:woman",
-          count: 2,
-          url: "/Admin-Secretaries",
-        },
-        2: {
-          name: "Departments",
-          icon: "mingcute:department-fill",
-          count: 10,
-          url: "/Admin-Departments",
-        },
-        3: {
-          name: "Laboratories",
-          icon: "medical-icon:i-laboratory",
-          count: 4,
-          url: "/Admin-Labs",
-        },
-        4: {
-          name: "Laboratory specialists",
-          icon: "game-icons:lab-coat",
-          count: 4,
-          url: "/Admin-Specialists",
+          url: "/Doctor-Patients",
         },
       },
     };
   },
   components: {
-    AdminSidebar,
     Icon,
+    DoctorSidebar,
   },
   methods: {
     gotourl(url) {
@@ -82,7 +59,7 @@ export default {
   pointer-events: all;
 }
 .card:hover {
-  color: #e57c23;
+  color: #10b5aa;
 }
 
 .mybtn {

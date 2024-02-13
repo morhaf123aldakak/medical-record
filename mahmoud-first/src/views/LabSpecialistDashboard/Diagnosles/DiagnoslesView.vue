@@ -1,19 +1,9 @@
 <template>
-  <div class="patients-admissions">
-    <SecretarySidebarVue>
+  <div class="diagnosles-admissions">
+    <SpecialistSidebar>
       <div class="d-block w-100">
         <div class="row my-3 add">
-          <div class="col-6 text-start">Admissions({{ a_num }})</div>
-          <div class="col-6 text-end">
-            <button
-              type="button"
-              class="add_button"
-              @click="gotourl()"
-              style="background-color: rgb(74, 226, 146)"
-            >
-              Add Admissions
-            </button>
-          </div>
+          <div class="col-12 text-start">Diagnosles({{ d_num }})</div>
         </div>
         <div class="row">
           <div class="col-6">
@@ -25,7 +15,9 @@
                 searchdata();
               "
               style="border-radius: 10px 0 0 10px"
-              :style="{ color: data_type != null ? '#0d0d7c' : 'white' }"
+              :style="{
+                color: data_type != null ? 'rgb(74, 226, 146)' : 'white',
+              }"
             >
               Active
             </button>
@@ -39,9 +31,11 @@
                 searchdata();
               "
               style="border-radius: 0 10px 10px 0"
-              :style="{ color: data_type == null ? '#0d0d7c' : 'white' }"
+              :style="{
+                color: data_type == null ? 'rgb(74, 226, 146)' : 'white',
+              }"
             >
-              Discharged
+              Done
             </button>
           </div>
           <div class="col-11">
@@ -67,28 +61,30 @@
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
                     <th scope="col">Doctor name</th>
-                    <th scope="col">Ward no.</th>
-                    <th scope="col">Bed no.</th>
-                    <th scope="col">
-                      {{ data_type == null ? "Discharge" : "Admission" }} date
-                    </th>
+                    <th scope="col">date</th>
+                    <th scope="col" v-if="data_type == null">Price</th>
                     <th scope="col">Edit</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="element in shown_data" :key="element.id">
-                    <th scope="row">{{ element.id }}</th>
-                    <td>
+                  <tr
+                    v-for="element in shown_data"
+                    :key="element.id"
+                    @click="doctor_note = element.doctor_note"
+                    style="cursor: pointer"
+                  >
+                    <th scope="row" @click="show_hide()">{{ element.id }}</th>
+                    <td @click="show_hide()">
                       {{ element.first_name + " " + element.last_name }}
                     </td>
-                    <td scope="row">{{ element.doctor_name }}</td>
-                    <td>{{ element.ward_no }}</td>
-                    <td>{{ element.bed_no }}</td>
-                    <td v-if="data_type != null">
-                      {{ element.admission_date }}
+                    <td scope="row" @click="show_hide()">
+                      {{ element.doctor_name }}
                     </td>
-                    <td v-if="data_type == null">
-                      {{ element.discharge_date }}
+                    <td>
+                      {{ element.date }}
+                    </td>
+                    <td v-if="data_type == null" @click="show_hide()">
+                      {{ element.diagnosistest_price }}
                     </td>
                     <td>
                       <button
@@ -106,88 +102,94 @@
           </div>
         </div>
       </div>
-    </SecretarySidebarVue>
+    </SpecialistSidebar>
+    <div class="overlay" id="popup1" style="visibility: hidden; opacity: 0">
+      <div class="popup">
+        <button type="button" class="close" @click="show_hide()">X</button>
+        <div class="content desc p-5 mt-2">
+          <h5>Doctor notes:</h5>
+          <h6>{{ doctor_note }}</h6>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import router from "@/router";
-import SecretarySidebarVue from "@/components/SecretaryDashboard/SecretarySidebar.vue";
+import SpecialistSidebar from "@/components/LapSpecialistDashboard/SpecialistSidebar.vue";
 import { Icon } from "@iconify/vue";
 export default {
-  name: "patients-admissions",
+  name: "diagnosles-admissions",
   data() {
     return {
       shown_data: {},
-      a_num: 0,
       searchbar: "",
       data_type: "active",
+      d_num: 0,
+      doctor_note: "",
       data_array: {
         0: {
           id: 1,
           doctor_name: "Ahmad Alahmad",
           first_name: "mode",
           last_name: "mmm",
-          ward_no: 4,
-          bed_no: 3,
-          admission_date: "20-1-1999",
-          discharge_date: "20-1-1999",
+          date: "20-1-1999",
+          diagnosistest_price: 200,
+          doctor_note: "Test1",
         },
         1: {
           id: 2,
           doctor_name: "Ahmad Alahmad",
           first_name: "mode",
           last_name: "kasem",
-          ward_no: 5,
-          bed_no: 3,
-          admission_date: "20-1-1999",
-          discharge_date: null,
+          date: "20-1-1999",
+          diagnosistest_price: 200,
+          doctor_note: "Test2",
         },
         2: {
           id: 3,
           doctor_name: "Ahmad Alahmad",
           first_name: "Mohamad",
           last_name: "samer",
-          ward_no: 5,
-          bed_no: 3,
-          admission_date: "20-1-1999",
-          discharge_date: null,
+          date: "20-1-1999",
+          diagnosistest_price: null,
+          doctor_note: "Test3",
         },
         3: {
           id: 4,
           doctor_name: "Ahmad Alahmad",
           first_name: "Ali",
           last_name: "abd",
-          ward_no: 5,
-          bed_no: 3,
-          admission_date: "20-1-1999",
-          discharge_date: "20-2-2013",
+          date: "20-1-1999",
+          diagnosistest_price: null,
+          doctor_note: "Test4",
         },
       },
     };
   },
   components: {
     Icon,
-    SecretarySidebarVue,
+    SpecialistSidebar,
   },
   methods: {
     searchdata() {
-      if (this.data_type != null) {
-        this.a_num = 0;
-      }
       this.shown_data = {};
+      if (this.data_type != null) {
+        this.d_num = 0;
+      }
       if (this.searchbar == "") {
         if (Object.keys(this.data_array).length > 0)
           for (var i = 0; i < Object.keys(this.data_array).length; i++) {
             if (
               this.data_type != null &&
-              this.data_array[i].discharge_date == null
+              this.data_array[i].diagnosistest_price == null
             ) {
               this.shown_data[i] = this.data_array[i];
-              this.a_num++;
+              this.d_num++;
             } else if (
               this.data_type == null &&
-              this.data_array[i].discharge_date != null
+              this.data_array[i].diagnosistest_price != null
             ) {
               this.shown_data[i] = this.data_array[i];
             }
@@ -203,12 +205,12 @@ export default {
             if (!result) {
               if (
                 this.data_type != null &&
-                this.data_array[i].discharge_date == null
+                this.data_array[i].diagnosistest_price == null
               ) {
                 this.shown_data[i] = this.data_array[i];
               } else if (
                 this.data_type == null &&
-                this.data_array[i].discharge_date != null
+                this.data_array[i].diagnosistest_price != null
               ) {
                 this.shown_data[i] = this.data_array[i];
               }
@@ -216,12 +218,12 @@ export default {
             if (result && name[result - 1] == " ") {
               if (
                 this.data_type != null &&
-                this.data_array[i].discharge_date == null
+                this.data_array[i].diagnosistest_price == null
               ) {
                 this.shown_data[i] = this.data_array[i];
               } else if (
                 this.data_type == null &&
-                this.data_array[i].discharge_date != null
+                this.data_array[i].diagnosistest_price != null
               ) {
                 this.shown_data[i] = this.data_array[i];
               }
@@ -229,11 +231,18 @@ export default {
           }
       }
     },
-    gotourl() {
-      router.push("/Secretary-Add-Admission");
-    },
     editurl(id) {
-      router.push("/Secretary-Edit-Admission?id=" + id);
+      router.push("/Specialist-Edit-Diagnosel?id=" + id);
+    },
+    show_hide() {
+      const element2 = document.getElementById("popup1");
+      if (element2.style.visibility == "visible") {
+        element2.style.visibility = "hidden";
+        element2.style.opacity = 0;
+      } else {
+        element2.style.visibility = "visible";
+        element2.style.opacity = 1;
+      }
     },
   },
   mounted() {
@@ -242,9 +251,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .searchdata {
-  background-color: rgb(74, 226, 146);
+  background-color: #0d0d7c;
   width: 100%;
   margin-bottom: 20px;
   display: flex;

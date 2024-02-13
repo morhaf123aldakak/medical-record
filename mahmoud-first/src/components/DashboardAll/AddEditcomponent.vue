@@ -94,7 +94,10 @@
             <input type="text" class="form-control" v-model="address" />
           </div>
         </div>
-        <div class="col-6" v-if="section == 'Doctor'">
+        <div
+          :class="section == 'Doctor' ? 'col-6' : 'col-12'"
+          v-if="section != 'Department'"
+        >
           <div class="text-start">Department</div>
           <div>
             <div class="dropdown">
@@ -107,12 +110,18 @@
               >
                 {{ department }}
               </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <ul
+                class="dropdown-menu dropdown-menu-center"
+                aria-labelledby="dropdownMenuButton1"
+              >
                 <li v-for="element in all_departments" :key="element.id">
                   <a
                     class="dropdown-item"
                     href="#"
-                    @click="department = element.name"
+                    @click="
+                      department = element.name;
+                      department_id = element.id;
+                    "
                     :style="{
                       color: department == element.name ? '#e57c23' : 'black',
                     }"
@@ -145,7 +154,10 @@
             />
           </div>
         </div>
-        <div class="col-12" v-if="section != 'Secretary'">
+        <div
+          class="col-12"
+          v-if="section == 'Doctor' || section == 'Department'"
+        >
           <div class="text-start">Note</div>
           <div>
             <textarea
@@ -190,6 +202,7 @@ export default {
       address: "",
       role: "",
       department: "",
+      department_id: 0,
       visit_price: 0,
       followup_price: 0,
       inpatient_visit_price: 0,
