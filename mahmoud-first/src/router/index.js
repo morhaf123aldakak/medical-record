@@ -46,6 +46,10 @@ import DoctorHomepageVue from "@/views/DoctorDashboard/DoctorHomepage.vue";
 import DoctorPatientsVue from "@/views/DoctorDashboard/Patients/DoctorPatients.vue";
 // Doctor Patient Info
 import PatientInfoVue from "@/views/DoctorDashboard/Patients/PatientInfo.vue";
+// Doctor Add Diagnosle
+import AddDiagnoseleVue from "@/views/DoctorDashboard/Diagnsoeles/AddDiagnosele.vue";
+// Doctor Edit Diagnosle
+import EditDiagnoseleVue from "@/views/DoctorDashboard/Diagnsoeles/EditDiagnosele.vue";
 
 const routes = [
   // login
@@ -227,6 +231,18 @@ const routes = [
     path: "/Patient-Info",
     name: "PatientInfo",
     component: PatientInfoVue,
+  },
+  // Doctor Add Diagnosle
+  {
+    path: "/Doctor-Add-Diagnosle",
+    name: "AddDiagnosle",
+    component: AddDiagnoseleVue,
+  },
+  // Doctor Edit Diagnosle
+  {
+    path: "/Doctor-Edit-Diagnosle",
+    name: "EditDiagnosle",
+    component: EditDiagnoseleVue,
   },
 ];
 
