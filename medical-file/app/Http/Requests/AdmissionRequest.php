@@ -22,7 +22,7 @@ class AdmissionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'bed_id'=>['required','integer'],
+            'bed_id'=>['required','exists:beds,id'],
             'admission_data'=>['required','date'],
             'discharge_data'=>['required','date'],
             'total_cost'=>['required','integer'],

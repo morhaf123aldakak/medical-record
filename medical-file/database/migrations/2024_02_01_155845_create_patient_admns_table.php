@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('patient_admns', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignIdFor(Bed::class)->constrained();
+
             $table->string('admission_data');
             $table->string('discharge_data');
             $table->integer('total_cost');

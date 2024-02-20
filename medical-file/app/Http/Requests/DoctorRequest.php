@@ -31,7 +31,8 @@ class DoctorRequest extends FormRequest
             'address'=>['nullable','string'],
             'mobile'=>['required','integer'],
             'phone_num'=>['nullable','integer'],
-            'type'=>['required','string',],
+            'type'=>['required','string'],
+            'hospital_dep_id' =>['required','string'],
 
         ];
     }

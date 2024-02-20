@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\DoctorRequest;
 use App\Models\Doctor;
 use App\Models\HospitalDep;
+use App\Models\HospitalDiag;
 use App\Models\User;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Support\Facades\Auth;
@@ -38,7 +39,7 @@ class AdminController extends Controller
         $data = $request->validated();
         $user = User::create($data);
         if($request->type=='doctor' ){
-            $doc['hospital_dep_id']        = $request->hospital_dep_id;
+            // $doc['hospital_dep_id']        = $request->hospital_dep_id;
             $doc['user_id']                = $user->id;
             $doc['visit_price']            = $request->visit_price;
             $doc['followup_price']         = $request->followup_price;
@@ -50,6 +51,11 @@ class AdminController extends Controller
             return response()->json([$data , $doctor]);
         }
         if($request->type == 'secretary')
+        {
+
+            return response()->json($user);
+        }
+        if($request->type == 'specialest')
         {
 
             return response()->json($user);
@@ -71,12 +77,21 @@ class AdminController extends Controller
         $data= User::where('type','secretary')->get();
         return response()->json($data);
     }
+
+    public function get_all_specialest()
+    {
+        $data= User::where('type','specialest')->get();
+        return response()->json($data);
+    }
+
     public function numbers()
     {
         $dep=HospitalDep::count();
         $doctor=User::where('type','doctor')->count();
         $secr=User::where('type','secretary')->count();
-        return response()->json([$dep,$doctor,$secr]);
+        $lap=HospitalDiag::count();
+        $spec=User::where('type','specialest')->count();
+        return response()->json([$dep,$doctor,$secr,$lap,$spec]);
     }
     public function update_secr(Request $request,$id)
     {

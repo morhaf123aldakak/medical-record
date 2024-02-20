@@ -1849,6 +1849,479 @@
 							"body": "{\n    \"id\": 1,\n    \"name\": \"cheast\",\n    \"phone\": \"2222222\",\n    \"email\": \"moda@gmail.com\",\n    \"address\": \"sdsadada\",\n    \"note\": \"hghghhfh\",\n    \"created_at\": \"2024-01-28T16:16:27.000000Z\",\n    \"updated_at\": \"2024-01-28T18:33:19.000000Z\"\n}"
 						}
 					]
+				},
+				{
+					"name": "store_lab",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "lap_address",
+									"value": "dxknflkn",
+									"type": "text"
+								},
+								{
+									"key": "lap_phone",
+									"value": "21212121",
+									"type": "text"
+								},
+								{
+									"key": "lap_mobile",
+									"value": "12212121",
+									"type": "text"
+								},
+								{
+									"key": "lap_email",
+									"value": "kndsa@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "densnan",
+									"type": "text"
+								},
+								{
+									"key": "hospital_dep_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/store_lab",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"store_lab"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "store_lab",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "lap_address",
+											"value": "dxknflkn",
+											"type": "text"
+										},
+										{
+											"key": "lap_phone",
+											"value": "21212121",
+											"type": "text"
+										},
+										{
+											"key": "lap_mobile",
+											"value": "12212121",
+											"type": "text"
+										},
+										{
+											"key": "lap_email",
+											"value": "kndsa@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "note",
+											"value": "densnan",
+											"type": "text"
+										},
+										{
+											"key": "hospital_dep_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/store_lab",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"store_lab"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 11 Feb 2024 17:54:42 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 11 Feb 2024 17:54:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"lap_address\": \"dxknflkn\",\n    \"lap_phone\": \"21212121\",\n    \"lap_mobile\": \"12212121\",\n    \"lap_email\": \"kndsa@gmail.com\",\n    \"note\": \"densnan\",\n    \"hospital_dep_id\": \"1\"\n}"
+						}
+					]
+				},
+				{
+					"name": "index_lab",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/index_lab",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"index_lab"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "index_lab",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/index_lab",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"index_lab"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 11 Feb 2024 18:04:47 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 11 Feb 2024 18:04:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"hospital_dep_id\": 1,\n        \"lap_address\": \"dxknflkn\",\n        \"lap_phone\": \"21212121\",\n        \"lap_mobile\": \"12212121\",\n        \"lap_email\": \"kndsa@gmail.com\",\n        \"note\": \"densnan\",\n        \"created_at\": \"2024-02-11T17:54:41.000000Z\",\n        \"updated_at\": \"2024-02-11T17:54:41.000000Z\",\n        \"lap\": {\n            \"id\": 1,\n            \"name\": \"eyes\",\n            \"phone\": \"2222222\",\n            \"email\": \"moda@gmail.com\",\n            \"address\": \"sdsadada\",\n            \"note\": \"hghghhfh\",\n            \"created_at\": \"2024-02-11T17:45:53.000000Z\",\n            \"updated_at\": \"2024-02-11T17:45:53.000000Z\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "update_diagnosl",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "update_diagnosl",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "lap_address",
+											"value": "morhaf",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/update_diagnosl/1",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"update_diagnosl",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 11 Feb 2024 18:12:36 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 11 Feb 2024 18:12:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"hospital_dep_id\": 1,\n    \"lap_address\": \"morhaf\",\n    \"lap_phone\": \"21212121\",\n    \"lap_mobile\": \"12212121\",\n    \"lap_email\": \"kndsa@gmail.com\",\n    \"note\": \"densnan\",\n    \"created_at\": \"2024-02-11T17:54:41.000000Z\",\n    \"updated_at\": \"2024-02-11T18:12:36.000000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get_all_specialest",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/get_all_specialest",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get_all_specialest"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get_all_specialest",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/get_all_specialest",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"get_all_specialest"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 11 Feb 2024 18:31:23 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 11 Feb 2024 18:31:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 2,\n        \"first_name\": \"morhaf\",\n        \"last_name\": \"aldakaka\",\n        \"email\": \"specialest@gmail.com\",\n        \"dob\": \"1998-07-07\",\n        \"gender\": \"mail\",\n        \"address\": \"llllll\",\n        \"mobile\": \"228515\",\n        \"phone_num\": \"413265\",\n        \"type\": \"specialest\",\n        \"created_at\": \"2024-02-11T18:25:53.000000Z\",\n        \"updated_at\": \"2024-02-11T18:25:53.000000Z\",\n        \"hospital_dep_id\": 1\n    }\n]"
+						}
+					]
 				}
 			]
 		},
@@ -1938,7 +2411,7 @@
 					},
 					"response": [
 						{
-							"name": "add patient",
+							"name": "add_patient",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -1963,7 +2436,7 @@
 										},
 										{
 											"key": "email",
-											"value": "hamd@gamil.com",
+											"value": "hamdppp12@gamil.com",
 											"type": "text"
 										},
 										{
@@ -2000,6 +2473,26 @@
 											"key": "country",
 											"value": "dsbfjkvsdkn",
 											"type": "text"
+										},
+										{
+											"key": "patient_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "old_medicines",
+											"value": "ndsmk",
+											"type": "text"
+										},
+										{
+											"key": "old_disease",
+											"value": "mxmmxm",
+											"type": "text"
+										},
+										{
+											"key": "Relationship_Status",
+											"value": "skdcouidn",
+											"type": "text"
 										}
 									]
 								},
@@ -2028,11 +2521,11 @@
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 30 Jan 2024 16:16:06 GMT"
+									"value": "Sat, 10 Feb 2024 19:38:38 GMT"
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 30 Jan 2024 16:16:06 GMT"
+									"value": "Sat, 10 Feb 2024 19:38:38 GMT"
 								},
 								{
 									"key": "Connection",
@@ -2056,7 +2549,7 @@
 								},
 								{
 									"key": "X-RateLimit-Remaining",
-									"value": "58"
+									"value": "59"
 								},
 								{
 									"key": "Access-Control-Allow-Origin",
@@ -2064,7 +2557,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"first_name\": \"mohamd\",\n    \"last_name\": \"hegazi\",\n    \"email\": \"hamd@gamil.com\",\n    \"city\": \"kldmvk\",\n    \"dob\": \"1999-12-1\",\n    \"country\": \"dsbfjkvsdkn\",\n    \"gender\": \"m\",\n    \"address\": \"dkjnv\",\n    \"mobile\": \"21541202\",\n    \"zipcode\": \"4465461\"\n}"
+							"body": "[\n    {\n        \"first_name\": \"mohamd\",\n        \"last_name\": \"hegazi\",\n        \"email\": \"hamdppp12@gamil.com\",\n        \"city\": \"kldmvk\",\n        \"dob\": \"1999-12-1\",\n        \"gender\": \"m\",\n        \"address\": \"dkjnv\",\n        \"mobile\": \"21541202\",\n        \"country\": \"dsbfjkvsdkn\",\n        \"zipcode\": \"4465461\",\n        \"Relationship_Status\": \"skdcouidn\"\n    },\n    {\n        \"patient_id\": 11,\n        \"old_medicines\": \"ndsmk\",\n        \"old_disease\": \"mxmmxm\"\n    }\n]"
 						}
 					]
 				},
@@ -3368,27 +3861,59 @@
 									"formdata": [
 										{
 											"key": "bed_id",
-											"value": "7\n",
+											"value": "7",
 											"type": "text"
 										},
 										{
 											"key": "admission_data",
-											"value": "2-5-2022",
+											"value": "2022-5-5",
 											"type": "text"
 										},
 										{
 											"key": "discharge_data",
-											"value": "5-5-2023",
-											"type": "text"
+											"value": "2023-5-5",
+											"type": "text",
+											"disabled": true
 										},
 										{
 											"key": "total_cost",
 											"value": "1000",
-											"type": "text"
+											"type": "text",
+											"disabled": true
 										},
 										{
 											"key": "note",
 											"value": "nbkjgjff",
+											"type": "text"
+										},
+										{
+											"key": "patient_id",
+											"value": "11",
+											"type": "text"
+										},
+										{
+											"key": "doctor_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "date",
+											"value": "2022-11-5",
+											"type": "text"
+										},
+										{
+											"key": "noteadmn",
+											"value": "jbdwqkja",
+											"type": "text"
+										},
+										{
+											"key": "patient_admn_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "ward_id",
+											"value": "1",
 											"type": "text"
 										}
 									]
@@ -3418,11 +3943,11 @@
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 02 Feb 2024 06:45:18 GMT"
+									"value": "Sun, 11 Feb 2024 19:34:47 GMT"
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 02 Feb 2024 06:45:18 GMT"
+									"value": "Sun, 11 Feb 2024 19:34:47 GMT"
 								},
 								{
 									"key": "Connection",
@@ -3454,10 +3979,55 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"bed_id\": \"7\",\n        \"admission_data\": \"2-5-2022\",\n        \"discharge_data\": \"5-5-2023\",\n        \"total_cost\": \"1000\",\n        \"note\": \"nbkjgjff\"\n    }\n]"
+							"body": "[\n    {\n        \"admission_data\": \"2022-5-5\",\n        \"bed_id\": \"7\",\n        \"ward_id\": \"1\",\n        \"note\": \"nbkjgjff\"\n    },\n    {\n        \"patient_id\": \"11\",\n        \"doctor_id\": \"1\",\n        \"date\": \"2022-11-5\",\n        \"note\": \"jbdwqkja\",\n        \"patient_admn_id\": 12\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "update_admission",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "discharge_data",
+									"value": "2024-5-12",
+									"type": "text"
+								},
+								{
+									"key": "total_cost",
+									"value": "10000000",
+									"type": "text"
+								}
+							]
 						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/update_admission/12",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"update_admission",
+								"12"
+							]
+						}
+					},
+					"response": [
 						{
-							"name": "add_admission",
+							"name": "update_admission",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -3471,34 +4041,19 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"key": "bed_id",
-											"value": "7\n",
-											"type": "text"
-										},
-										{
-											"key": "admission_data",
-											"value": "2022-5-5",
-											"type": "text"
-										},
-										{
 											"key": "discharge_data",
-											"value": "2023-5-5",
+											"value": "2024-5-12",
 											"type": "text"
 										},
 										{
 											"key": "total_cost",
-											"value": "1000",
-											"type": "text"
-										},
-										{
-											"key": "note",
-											"value": "nbkjgjff",
+											"value": "10000000",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "127.0.0.1:8000/api/add_admission",
+									"raw": "127.0.0.1:8000/api/update_admission/12",
 									"host": [
 										"127",
 										"0",
@@ -3508,7 +4063,8 @@
 									"port": "8000",
 									"path": [
 										"api",
-										"add_admission"
+										"update_admission",
+										"12"
 									]
 								}
 							},
@@ -3522,11 +4078,11 @@
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 02 Feb 2024 06:50:30 GMT"
+									"value": "Sun, 11 Feb 2024 19:36:49 GMT"
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 02 Feb 2024 06:50:30 GMT"
+									"value": "Sun, 11 Feb 2024 19:36:49 GMT"
 								},
 								{
 									"key": "Connection",
@@ -3550,7 +4106,7 @@
 								},
 								{
 									"key": "X-RateLimit-Remaining",
-									"value": "57"
+									"value": "58"
 								},
 								{
 									"key": "Access-Control-Allow-Origin",
@@ -3558,7 +4114,1708 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"bed_id\": \"7\",\n        \"admission_data\": \"2022-May-05\",\n        \"discharge_data\": \"2023-May-05\",\n        \"total_cost\": \"1000\",\n        \"note\": \"nbkjgjff\"\n    }\n]"
+							"body": "{\n    \"id\": 12,\n    \"admission_data\": \"2022-5-5\",\n    \"discharge_data\": \"2024-5-12\",\n    \"total_cost\": \"10000000\",\n    \"note\": \"nbkjgjff\",\n    \"created_at\": \"2024-02-11T19:34:47.000000Z\",\n    \"updated_at\": \"2024-02-11T19:36:49.000000Z\",\n    \"ward_id\": 1,\n    \"bed_id\": 7\n}"
+						}
+					]
+				},
+				{
+					"name": "get_admissions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/get_admissions",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get_admissions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get_admissions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/get_admissions",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"get_admissions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 11 Feb 2024 19:55:18 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 11 Feb 2024 19:55:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 6,\n        \"patient_id\": 11,\n        \"doctor_id\": 1,\n        \"date\": \"2022-11-5\",\n        \"note\": \"jbdwqkja\",\n        \"created_at\": \"2024-02-11T19:34:47.000000Z\",\n        \"updated_at\": \"2024-02-11T19:34:47.000000Z\",\n        \"patient_admn_id\": 12,\n        \"patient\": {\n            \"id\": 11,\n            \"first_name\": \"mohamd\",\n            \"last_name\": \"hegazi\",\n            \"email\": \"hamdppp12@gamil.com\",\n            \"city\": \"kldmvk\",\n            \"dob\": \"1999-12-01\",\n            \"gender\": \"m\",\n            \"address\": \"dkjnv\",\n            \"mobile\": \"21541202\",\n            \"country\": \"dsbfjkvsdkn\",\n            \"zipcode\": \"4465461\",\n            \"created_at\": \"2024-02-10T19:38:38.000000Z\",\n            \"updated_at\": \"2024-02-10T19:38:38.000000Z\",\n            \"Relationship_Status\": \"skdcouidn\"\n        },\n        \"doctor\": {\n            \"id\": 1,\n            \"user_id\": 5,\n            \"visit_price\": 2255,\n            \"followup_price\": 500,\n            \"inpatient_visit_price\": 500,\n            \"note\": \"mkhjk\",\n            \"signature\": \"morhaf_image/YKyWK9XdZjhdpKBv1k1QmjGq3PeQDDedsRLeCeXf.png\",\n            \"created_at\": \"2024-02-11T19:30:18.000000Z\",\n            \"updated_at\": \"2024-02-11T19:30:18.000000Z\",\n            \"user\": {\n                \"id\": 5,\n                \"first_name\": \"morhaf\",\n                \"last_name\": \"aldakaka\",\n                \"email\": \"doctor@gmail.com\",\n                \"dob\": \"1998-07-07\",\n                \"gender\": \"mail\",\n                \"address\": \"llllll\",\n                \"mobile\": \"228515\",\n                \"phone_num\": \"413265\",\n                \"type\": \"doctor\",\n                \"created_at\": \"2024-02-11T19:30:18.000000Z\",\n                \"updated_at\": \"2024-02-11T19:30:18.000000Z\",\n                \"hospital_dep_id\": 1\n            }\n        },\n        \"adms\": {\n            \"id\": 12,\n            \"admission_data\": \"2022-5-5\",\n            \"discharge_data\": \"2024-5-12\",\n            \"total_cost\": 10000000,\n            \"note\": \"nbkjgjff\",\n            \"created_at\": \"2024-02-11T19:34:47.000000Z\",\n            \"updated_at\": \"2024-02-11T19:36:49.000000Z\",\n            \"ward_id\": 1,\n            \"bed_id\": 7,\n            \"ward\": {\n                \"id\": 1,\n                \"number\": \"12222\",\n                \"status\": \"2222\",\n                \"created_at\": \"2024-01-30T16:56:15.000000Z\",\n                \"updated_at\": \"2024-01-30T18:07:05.000000Z\",\n                \"bed\": [\n                    {\n                        \"id\": 6,\n                        \"number\": \"Bed2\",\n                        \"status\": \"Vacant\",\n                        \"ward_id\": 1,\n                        \"created_at\": \"2024-01-30T18:24:58.000000Z\",\n                        \"updated_at\": \"2024-01-30T18:24:58.000000Z\"\n                    }\n                ]\n            }\n        }\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "lap",
+			"item": [
+				{
+					"name": "number_diagnols",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/number_diagnols",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"number_diagnols"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "number_diagnols",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/number_diagnols",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"number_diagnols"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Feb 2024 16:15:39 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Feb 2024 16:15:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "1"
+						}
+					]
+				},
+				{
+					"name": "show_test",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/show_test",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"show_test"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "show_test",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/show_test",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"show_test"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Feb 2024 19:40:44 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Feb 2024 19:40:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 4,\n        \"hospital_diag_id\": 1,\n        \"patient_history_id\": 6,\n        \"doctor_id\": 1,\n        \"patient_id\": 10,\n        \"date\": \"2024-9-15\",\n        \"note\": \"mo\",\n        \"created_at\": \"2024-02-13T19:04:37.000000Z\",\n        \"updated_at\": \"2024-02-13T19:26:09.000000Z\",\n        \"diag_price\": 2,\n        \"lap_note\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "ubdet_test",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "note",
+									"value": "mohamad",
+									"type": "text"
+								},
+								{
+									"key": "diag_price",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/ubdet_test/3",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ubdet_test",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ubdet_test",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "note",
+											"value": "mohamad",
+											"type": "text"
+										},
+										{
+											"key": "diag_price",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/ubdet_test/3",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"ubdet_test",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Feb 2024 19:26:09 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Feb 2024 19:26:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"hospital_diag_id\": 1,\n    \"patient_history_id\": 6,\n    \"doctor_id\": 1,\n    \"patient_id\": 10,\n    \"date\": \"2024-9-12\",\n    \"note\": \"mohamad\",\n    \"created_at\": \"2024-02-13T19:04:37.000000Z\",\n    \"updated_at\": \"2024-02-13T19:26:09.000000Z\",\n    \"diag_price\": \"2\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get_test",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/get_test/3",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get_test",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get_test",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/get_test/3",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"get_test",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Feb 2024 19:44:43 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Feb 2024 19:44:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"hospital_diag_id\": 2,\n    \"patient_history_id\": 6,\n    \"doctor_id\": 1,\n    \"patient_id\": 10,\n    \"date\": \"2000-2-25\",\n    \"note\": \"moda\",\n    \"created_at\": \"2024-02-13T19:04:37.000000Z\",\n    \"updated_at\": \"2024-02-18T17:28:51.000000Z\",\n    \"diag_price\": 2,\n    \"lap_note\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "doctor",
+			"item": [
+				{
+					"name": "nember_patient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|AlYUCCOHJju9fLfQ16EGgcjgRMHv7fLtYr0sPKMP52425425",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/nember_patient",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"nember_patient"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "nember_patient",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/nember_patient",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"nember_patient"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Feb 2024 19:09:03 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Feb 2024 19:09:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "1"
+						}
+					]
+				},
+				{
+					"name": "store_test",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "doctor_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "patient_id",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2024-9-12",
+									"type": "text"
+								},
+								{
+									"key": "hospital_diag_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "patient_history_id",
+									"value": "6",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/store_test",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"store_test"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "doctor_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "patient_id",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "date",
+											"value": "2024-9-12",
+											"type": "text"
+										},
+										{
+											"key": "hospital_diag_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "patient_history_id",
+											"value": "6",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/store_test",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"store_test"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Feb 2024 19:04:37 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Feb 2024 19:04:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"doctor_id\": \"1\",\n    \"patient_id\": \"10\",\n    \"date\": \"2024-9-12\",\n    \"hospital_diag_id\": \"1\",\n    \"patient_history_id\": \"6\"\n}"
+						}
+					]
+				},
+				{
+					"name": "data_doctor",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/data_doctor/6",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"data_doctor",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "data_doctor",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/data_doctor/6",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"data_doctor",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Feb 2024 18:34:48 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Feb 2024 18:34:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 6,\n        \"patient_id\": 11,\n        \"doctor_id\": 1,\n        \"date\": \"2022-11-5\",\n        \"note\": \"jbdwqkja\",\n        \"created_at\": \"2024-02-11T19:34:47.000000Z\",\n        \"updated_at\": \"2024-02-11T19:34:47.000000Z\",\n        \"patient_admn_id\": 12,\n        \"patient\": {\n            \"id\": 11,\n            \"first_name\": \"mohamd\",\n            \"last_name\": \"hegazi\",\n            \"email\": \"hamdppp12@gamil.com\",\n            \"city\": \"kldmvk\",\n            \"dob\": \"1999-12-01\",\n            \"gender\": \"m\",\n            \"address\": \"dkjnv\",\n            \"mobile\": \"21541202\",\n            \"country\": \"dsbfjkvsdkn\",\n            \"zipcode\": \"4465461\",\n            \"created_at\": \"2024-02-10T19:38:38.000000Z\",\n            \"updated_at\": \"2024-02-10T19:38:38.000000Z\",\n            \"Relationship_Status\": \"skdcouidn\"\n        },\n        \"adms\": {\n            \"id\": 12,\n            \"admission_data\": \"2022-5-5\",\n            \"discharge_data\": \"2024-5-12\",\n            \"total_cost\": 10000000,\n            \"note\": \"nbkjgjff\",\n            \"created_at\": \"2024-02-11T19:34:47.000000Z\",\n            \"updated_at\": \"2024-02-11T19:36:49.000000Z\",\n            \"ward_id\": 1,\n            \"bed_id\": 7,\n            \"wardd\": {\n                \"id\": 1,\n                \"number\": \"12222\",\n                \"status\": \"2222\",\n                \"created_at\": \"2024-01-30T16:56:15.000000Z\",\n                \"updated_at\": \"2024-01-30T18:07:05.000000Z\"\n            },\n            \"bedd\": {\n                \"id\": 7,\n                \"number\": \"Bed1\",\n                \"status\": \"Occupied\",\n                \"ward_id\": 26,\n                \"created_at\": \"2024-02-02T06:25:19.000000Z\",\n                \"updated_at\": \"2024-02-02T06:25:19.000000Z\"\n            }\n        },\n        \"hestory\": [\n            {\n                \"id\": 3,\n                \"hospital_diag_id\": 2,\n                \"patient_history_id\": 6,\n                \"doctor_id\": 1,\n                \"patient_id\": 10,\n                \"date\": \"2000-2-25\",\n                \"note\": \"moda\",\n                \"created_at\": \"2024-02-13T19:04:37.000000Z\",\n                \"updated_at\": \"2024-02-18T17:28:51.000000Z\",\n                \"diag_price\": 2\n            },\n            {\n                \"id\": 4,\n                \"hospital_diag_id\": 1,\n                \"patient_history_id\": 6,\n                \"doctor_id\": 1,\n                \"patient_id\": 10,\n                \"date\": \"2024-9-15\",\n                \"note\": \"mo\",\n                \"created_at\": \"2024-02-13T19:04:37.000000Z\",\n                \"updated_at\": \"2024-02-13T19:26:09.000000Z\",\n                \"diag_price\": 2\n            }\n        ],\n        \"dsess\": {\n            \"id\": 1,\n            \"patient_history_id\": 6,\n            \"name\": \"miiiii\",\n            \"symp\": \"test\",\n            \"Feeling_sick_date\": \"2022-5-10\",\n            \"medicines\": \"nabskdhalklk\",\n            \"created_at\": \"2024-02-18T18:17:50.000000Z\",\n            \"updated_at\": \"2024-02-18T18:17:50.000000Z\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "ubdet_diagnosle",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "date",
+									"value": "2000-2-25",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "moda",
+									"type": "text"
+								},
+								{
+									"key": "hospital_diag_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/ubdet_diagnosle/4",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ubdet_diagnosle",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ubdet_diagnosle",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "date",
+											"value": "2000-2-25",
+											"type": "text"
+										},
+										{
+											"key": "note",
+											"value": "moda",
+											"type": "text"
+										},
+										{
+											"key": "hospital_diag_id",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/ubdet_diagnosle/4",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"ubdet_diagnosle",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Feb 2024 17:28:51 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Feb 2024 17:28:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"hospital_diag_id\": \"2\",\n    \"patient_history_id\": 6,\n    \"doctor_id\": 1,\n    \"patient_id\": 10,\n    \"date\": \"2000-2-25\",\n    \"note\": \"moda\",\n    \"created_at\": \"2024-02-13T19:04:37.000000Z\",\n    \"updated_at\": \"2024-02-18T17:28:51.000000Z\",\n    \"diag_price\": 2\n}"
+						}
+					]
+				},
+				{
+					"name": "data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "miiiii",
+									"type": "text"
+								},
+								{
+									"key": "symp",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "Feeling_sick_date",
+									"value": "2022-5-10",
+									"type": "text"
+								},
+								{
+									"key": "medicines",
+									"value": "nabskdhalklk",
+									"type": "text"
+								},
+								{
+									"key": "patient_history_id",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "chronic",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "old_disease",
+									"value": "mzmmz",
+									"type": "text"
+								},
+								{
+									"key": "old_medicines",
+									"value": ",z,zmzm",
+									"type": "text"
+								},
+								{
+									"key": "follow",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2022-5-11",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "kdn",
+									"type": "text"
+								},
+								{
+									"key": "total_price",
+									"value": "22222",
+									"type": "text"
+								},
+								{
+									"key": "patient_history_id",
+									"value": "6",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/data/11",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"data",
+								"11"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "miiiii",
+											"type": "text"
+										},
+										{
+											"key": "symp",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "Feeling_sick_date",
+											"value": "2022-5-10",
+											"type": "text"
+										},
+										{
+											"key": "medicines",
+											"value": "nabskdhalklk",
+											"type": "text"
+										},
+										{
+											"key": "patient_history_id",
+											"value": "6",
+											"type": "text"
+										},
+										{
+											"key": "chronic",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "old_disease",
+											"value": "mzmmz",
+											"type": "text"
+										},
+										{
+											"key": "old_medicines",
+											"value": ",z,zmzm",
+											"type": "text"
+										},
+										{
+											"key": "follow",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "date",
+											"value": "2022-5-11",
+											"type": "text"
+										},
+										{
+											"key": "note",
+											"value": "kdn",
+											"type": "text"
+										},
+										{
+											"key": "total_price",
+											"value": "22222",
+											"type": "text"
+										},
+										{
+											"key": "patient_history_id",
+											"value": "6",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/data/11",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"data",
+										"11"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Feb 2024 19:00:34 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Feb 2024 19:00:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"miiiii\",\n    \"symp\": \"test\",\n    \"Feeling_sick_date\": \"2022-5-10\",\n    \"medicines\": \"nabskdhalklk\",\n    \"patient_history_id\": \"6\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get_all_hestory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|wJUgsfBiscgHQ4eZyapKTW9ron8Lrk4lhiUtPuv53d41ab79",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/get_all_hestory",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get_all_hestory"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get_all_hestory",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/get_all_hestory",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"get_all_hestory"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Feb 2024 19:10:12 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Feb 2024 19:10:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 6,\n        \"patient_id\": 11,\n        \"doctor_id\": 1,\n        \"date\": \"2022-5-11\",\n        \"note\": \"kdn\",\n        \"created_at\": \"2024-02-11T19:34:47.000000Z\",\n        \"updated_at\": \"2024-02-18T18:56:57.000000Z\",\n        \"patient_admn_id\": 12,\n        \"patient\": {\n            \"id\": 11,\n            \"first_name\": \"mohamd\",\n            \"last_name\": \"hegazi\",\n            \"email\": \"hamdppp12@gamil.com\",\n            \"city\": \"kldmvk\",\n            \"dob\": \"1999-12-01\",\n            \"gender\": \"m\",\n            \"address\": \"dkjnv\",\n            \"mobile\": \"21541202\",\n            \"country\": \"dsbfjkvsdkn\",\n            \"zipcode\": \"4465461\",\n            \"created_at\": \"2024-02-10T19:38:38.000000Z\",\n            \"updated_at\": \"2024-02-10T19:38:38.000000Z\",\n            \"Relationship_Status\": \"skdcouidn\"\n        },\n        \"adms\": {\n            \"id\": 12,\n            \"admission_data\": \"2022-5-5\",\n            \"discharge_data\": \"2024-5-12\",\n            \"total_cost\": 10000000,\n            \"note\": \"nbkjgjff\",\n            \"created_at\": \"2024-02-11T19:34:47.000000Z\",\n            \"updated_at\": \"2024-02-11T19:36:49.000000Z\",\n            \"ward_id\": 1,\n            \"bed_id\": 7,\n            \"wardd\": {\n                \"id\": 1,\n                \"number\": \"12222\",\n                \"status\": \"2222\",\n                \"created_at\": \"2024-01-30T16:56:15.000000Z\",\n                \"updated_at\": \"2024-01-30T18:07:05.000000Z\"\n            },\n            \"bedd\": {\n                \"id\": 7,\n                \"number\": \"Bed1\",\n                \"status\": \"Occupied\",\n                \"ward_id\": 26,\n                \"created_at\": \"2024-02-02T06:25:19.000000Z\",\n                \"updated_at\": \"2024-02-02T06:25:19.000000Z\"\n            }\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "get_diagnoss",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/get_diagnoss/4",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get_diagnoss",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get_diagnoss",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/get_diagnoss/4",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"get_diagnoss",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Feb 2024 19:18:42 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Feb 2024 19:18:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 4,\n    \"hospital_diag_id\": 1,\n    \"patient_history_id\": 6,\n    \"doctor_id\": 1,\n    \"patient_id\": 10,\n    \"date\": \"2024-9-15\",\n    \"note\": \"mo\",\n    \"created_at\": \"2024-02-13T19:04:37.000000Z\",\n    \"updated_at\": \"2024-02-13T19:26:09.000000Z\",\n    \"diag_price\": 2\n}"
+						}
+					]
+				},
+				{
+					"name": "add_diagnoss",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "patient_history_id",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "irjfd",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2022-5-12",
+									"type": "text"
+								},
+								{
+									"key": "hospital_diag_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/add_diagnoss",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"add_diagnoss"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "add_diagnoss",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "patient_history_id",
+											"value": "6",
+											"type": "text"
+										},
+										{
+											"key": "note",
+											"value": "irjfd",
+											"type": "text"
+										},
+										{
+											"key": "date",
+											"value": "2022-5-12",
+											"type": "text"
+										},
+										{
+											"key": "hospital_diag_id",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/add_diagnoss",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"add_diagnoss"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Feb 2024 19:29:45 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Feb 2024 19:29:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"date\": \"2022-5-12\",\n    \"note\": \"irjfd\",\n    \"hospital_diag_id\": \"2\",\n    \"patient_history_id\": \"6\"\n}"
 						}
 					]
 				}

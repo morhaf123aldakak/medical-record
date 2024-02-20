@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('doctors', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(HospitalDep::class)->constrained();
             $table->foreignIdFor(User::class)->constrained();
             $table->double('visit_price');
             $table->double('followup_price');

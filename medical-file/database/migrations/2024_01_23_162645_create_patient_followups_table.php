@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignIdFor(PatientHistory::class)->constrained();
             $table->string('date');
             $table->string('note');
+            $table->string('total_price');
             $table->timestamps();
         });
     }

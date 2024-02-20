@@ -32,6 +32,7 @@ class PatientRequest extends FormRequest
             'address'=>['nullable','string'],
             'mobile'=>['required','integer'],
             'zipcode'=>['nullable','string'],
+            'Relationship_Status'=>['nullable','string'],
         ];
     }
 }

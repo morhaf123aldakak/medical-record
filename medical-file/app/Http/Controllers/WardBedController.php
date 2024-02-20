@@ -6,6 +6,7 @@ use App\Http\Requests\AdmissionRequest;
 use App\Models\Bed;
 use App\Models\Patient;
 use App\Models\PatientAdmn;
+use App\Models\PatientHistory;
 use App\Models\Ward;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -116,13 +117,40 @@ class WardBedController extends Controller
         $Addm=PatientAdmn::count();
         return response()->json([$Addm,$patient,$ward]);
     }
-    public function add_admission(AdmissionRequest $request)
+    public function add_admission(request $request)
     {
+        $data['admission_data']=$request->admission_data;
+        // $data['discharge_data']=$request->discharge_data;
+        $data['bed_id']=$request->bed_id ;
+        $data['ward_id']=$request->ward_id ;
+        // $data['total_cost ']=$request->total_cost ;
+        $data['note']=$request->note ;
 
-        $data = $request->validated();
-        $data['admission_data']=Carbon::parse($data['admission_data'])->format('Y-M-d');
-        $data['discharge_data']=Carbon::parse($data['discharge_data'])->format('Y-M-d');
         $user = PatientAdmn::create($data);
-        return response()->json(['data'=>$user],200);
+        $his['patient_id']=$request->patient_id;
+        $his['doctor_id']=$request->doctor_id;
+        $his['date']=$request->date;
+        $his['note']=$request->noteadmn;
+        $his['patient_admn_id']=$user->id;
+        PatientHistory::create($his);
+        return response()->json([$data,$his]);
     }
+    public function update_admission(request $request,$id)
+    {
+        $data=PatientAdmn::where('id',$id)->first();
+        $data->update([
+        'admission_data'=>$request->admission_data ?? $data->admission_data,
+        'discharge_data'=>$request->discharge_data ??$data->discharge_data,
+        'bed_id'=>$request->bed_id ?? $data->bed_id,
+        'ward_id'=>$request->ward_id ?? $data->ward_id,
+        'total_cost'=>$request->total_cost ??$data->total_cost,
+        'note'=>$request->note ?? $data->note,
+        ]);
+        return response()->json($data);
+    }
+public function get_admissions(){
+    $data=PatientHistory::with('patient','doctor','adms')->get();
+    return response()->json($data);
+
+}
 }

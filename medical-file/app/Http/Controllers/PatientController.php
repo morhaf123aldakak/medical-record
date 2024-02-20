@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Patient_old_histories;
 use App\Http\Requests\PatientRequest;
 use App\Models\Patient;
+use App\Models\PatientOldHistory;
 use Illuminate\Http\Request;
 
 class PatientController extends Controller
@@ -28,12 +30,30 @@ class PatientController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function add_patient(PatientRequest $request)
+    public function add_patient( Request $request)
     {
-        $data = $request->validated();
+
+
+
+            $data ['last_name']=$request->last_name ;
+               $data['email']=$request->email ;
+                $data['city']=$request->city ;
+                $data['dob']=$request->dob;
+                $data['gender']=$request->gender;
+                $data['address']=$request->address;
+                $data['mobile']=$request->mobile;
+                $data['country']=$request->country;
+                $data['zipcode']=$request->zipcode;
+                $data['Relationship_Status']=$request->Relationship_Status;
         $user = Patient::create($data);
-        return response()->json($data);
+
+        $old['patient_id']=$user->id;
+        $old['old_medicines']=$request->old_medicines;
+        $old['old_disease']=$request->old_disease;
+        PatientOldHistory::create($old);
+        return response()->json([$data,$old]);
     }
+
 
     /**
      * Display the specified resource.
@@ -71,6 +91,11 @@ class PatientController extends Controller
                 'mobile'=>$request->mobile??$data->mobile,
                 'country'=>$request->country??$data->country,
                 'zipcode'=>$request->zipcode??$data->zipcode,
+            ]);
+            $data->old->update([
+                'patient_id'=>$request->patient_id??$data->patient_id,
+                'old_medicines'=>$request->old_medicines??$data->old_medicines,
+                'old_disease'=>$request->old_disease??$data->old_disease,
             ]);
             return response()->json($data);
     }

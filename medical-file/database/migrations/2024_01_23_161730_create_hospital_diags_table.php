@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('lap_phone');
             $table->string('lap_mobile');
             $table->string('lap_email');
-            $table->double('diag_price');
             $table->string('note');
             $table->timestamps();
         });

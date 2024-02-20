@@ -23,6 +23,7 @@ return new class extends Migration
             $table->foreignIdFor(Patient::class)->constrained();
             $table->string('date');
             $table->string('note');
+            $table->string('lap_note');
             $table->timestamps();
         });
     }

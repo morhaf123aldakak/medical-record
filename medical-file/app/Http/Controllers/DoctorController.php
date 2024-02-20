@@ -2,7 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Diseases;
+use App\Models\Disease;
 use App\Models\Doctor;
+use App\Models\Patient;
+use App\Models\PatientDiagnosleHistory;
+use App\Models\PatientFollowup;
+use App\Models\PatientHistory;
+use App\Models\PatientOldHistory;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -87,5 +94,83 @@ class DoctorController extends Controller
         $data=Doctor::find($id);
         $data->delete();
         return response()->json('doctor delete');
+    }
+    public function nember_patient(){
+        $user = auth()->user()->id;
+        $doc = Doctor::where('user_id' , $user)->first();
+        $data= PatientHistory::where('doctor_id',  $doc->id)->count();
+        return response()->json($data);
+    }
+    public function get_all_hestory()
+    {
+        $doctor_id=Doctor::where('user_id',auth()->user()->id)->first();
+
+        $data= PatientHistory::with('patient','adms')->where('doctor_id',$doctor_id->id)->get();
+        return response()->json($data);
+    }
+    public function data_doctor($id)
+    {
+        $data= PatientHistory::with('patient','adms','hestory','dsess')->where('id',$id)->get();
+        return response()->json($data);
+
+    }
+    public function data(Request $request,$id)
+    {
+     //  $data= Patient::with('old','patient_histories')->where('id',$id)->first();
+
+     $data= PatientHistory::where('patient_id',$id)->first();
+     $data->update([
+        'date'=>$request->date ?? $data->date,
+        'note'=>$request->note ??$data->note,
+     ]);
+
+     if($request->chronic =='true'){
+        $old['old_disease']                 = $request->name;
+        $old['old_medicines']            = $request->medicines;
+        $old['patient_id']            = $id;
+        PatientOldHistory::create($old);
+     }
+
+          $diss['name']                 = $request->name;
+          $diss['symp']                = $request->symp;
+          $diss['Feeling_sick_date']    = $request->Feeling_sick_date;
+          $diss['medicines']            = $request->medicines;
+          $diss['patient_history_id']   = $request->patient_history_id;
+          Disease::create($diss);
+          if($request->follow =='true')
+          {
+          $follow['date']                   = $request->date;
+          $follow['note']                   = $request->note;
+          $follow['total_price']            = $request->total_price;
+          $follow['patient_history_id']    = $request->patient_history_id ;
+          PatientFollowup::create($follow);
+          }
+          return response()->json($diss);
+
+
+    }
+    public function ubdet_diagnosle(Request $request,$id)
+    {
+        $data=PatientDiagnosleHistory::first();
+        $data->update([
+            'date'=>$request->date ?? $data->date,
+            'note'=>$request->note ??$data->note,
+            'hospital_diag_id'=>$request->hospital_diag_id  ?? $data->hospital_diag_id ,
+        ]);
+            return response()->json($data);
+    }
+    public function get_diagnoss($id)
+    {
+        $data=PatientDiagnosleHistory::find($id);
+        return response()->json($data);
+    }
+    public function add_diagnoss(Request $request)
+    {
+        $data['date']=$request->date;
+        $data['note']=$request->note;
+        $data['hospital_diag_id']=$request->hospital_diag_id;
+        $data['patient_history_id']=$request->patient_history_id;
+        return response()->json($data);
+
     }
 }

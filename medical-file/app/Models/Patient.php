@@ -9,4 +9,13 @@ class Patient extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    public function patient_histories()
+    {
+        return $this->hasOne(PatientHistory::class)->with('adms','hestory','dsess');
+    }
+    public function old()
+    {
+        return $this->hasOne(PatientOldHistory::class);
+    }
+
 }
