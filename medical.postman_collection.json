@@ -1,0 +1,3568 @@
+{
+	"info": {
+		"_postman_id": "06ff505f-2dad-42b7-a204-b499beca9397",
+		"name": "medical",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30955964",
+		"_collection_link": "https://gold-station-985826.postman.co/workspace/myproject~4d0e2be1-9315-4812-9a65-ceda96888da8/collection/30955964-06ff505f-2dad-42b7-a204-b499beca9397?action=share&source=collection_link&creator=30955964"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "add user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "morhaf",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "aldakaka",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "tar@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "222222",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "mail",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "llllll",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "228515",
+									"type": "text"
+								},
+								{
+									"key": "phone_num",
+									"value": "413265",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "doctor",
+									"type": "text"
+								},
+								{
+									"key": "hospital_dep_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "visit_price",
+									"value": "2255",
+									"type": "text"
+								},
+								{
+									"key": "followup_price",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "inpatient_visit_price",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "mkhjk",
+									"type": "text"
+								},
+								{
+									"key": "signature",
+									"type": "file",
+									"src": "/C:/Users/morha/OneDrive/Pictures/Camera Roll/WIN_20220813_16_58_56_Pro (2).jpg"
+								},
+								{
+									"key": "dob",
+									"value": "1998-7-7",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/register-User",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register-User"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "add secrtery",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "first_name",
+											"value": "morhaf",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "aldakaka",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "tarrek@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "222222",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "mail",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "llllll",
+											"type": "text"
+										},
+										{
+											"key": "mobile",
+											"value": "228515",
+											"type": "text"
+										},
+										{
+											"key": "phone_num",
+											"value": "413265",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "secretary",
+											"type": "text"
+										},
+										{
+											"key": "hospital_dep_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "user_id",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "visit_price",
+											"value": "2255",
+											"type": "text"
+										},
+										{
+											"key": "followup_price",
+											"value": "500",
+											"type": "text"
+										},
+										{
+											"key": "inpatient_visit_price",
+											"value": "500",
+											"type": "text"
+										},
+										{
+											"key": "note",
+											"value": "mkhjk",
+											"type": "text"
+										},
+										{
+											"key": "signature",
+											"type": "file",
+											"src": "/C:/Users/morha/OneDrive/Pictures/Camera Roll/WIN_20220813_16_58_56_Pro (2).jpg"
+										},
+										{
+											"key": "dob",
+											"value": "1998-7-7",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/register-User",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"register-User"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 16:40:22 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 16:40:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"first_name\": \"morhaf\",\n    \"last_name\": \"aldakaka\",\n    \"email\": \"tarrek@gmail.com\",\n    \"dob\": \"1998-7-7\",\n    \"gender\": \"mail\",\n    \"address\": \"llllll\",\n    \"mobile\": \"228515\",\n    \"phone_num\": \"413265\",\n    \"type\": \"secretary\",\n    \"updated_at\": \"2024-01-28T16:40:22.000000Z\",\n    \"created_at\": \"2024-01-28T16:40:22.000000Z\",\n    \"id\": 6\n}"
+						},
+						{
+							"name": "add doctor",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "first_name",
+											"value": "morhaf",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "aldakaka",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "tar@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "222222",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "mail",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "llllll",
+											"type": "text"
+										},
+										{
+											"key": "mobile",
+											"value": "228515",
+											"type": "text"
+										},
+										{
+											"key": "phone_num",
+											"value": "413265",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "doctor",
+											"type": "text"
+										},
+										{
+											"key": "hospital_dep_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "user_id",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "visit_price",
+											"value": "2255",
+											"type": "text"
+										},
+										{
+											"key": "followup_price",
+											"value": "500",
+											"type": "text"
+										},
+										{
+											"key": "inpatient_visit_price",
+											"value": "500",
+											"type": "text"
+										},
+										{
+											"key": "note",
+											"value": "mkhjk",
+											"type": "text"
+										},
+										{
+											"key": "signature",
+											"type": "file",
+											"src": "/C:/Users/morha/OneDrive/Pictures/Camera Roll/WIN_20220813_16_58_56_Pro (2).jpg"
+										},
+										{
+											"key": "dob",
+											"value": "1998-7-7",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/register-User",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"register-User"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 16:41:19 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 16:41:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"first_name\": \"morhaf\",\n        \"last_name\": \"aldakaka\",\n        \"email\": \"tar@gmail.com\",\n        \"password\": \"222222\",\n        \"dob\": \"1998-7-7\",\n        \"gender\": \"mail\",\n        \"address\": \"llllll\",\n        \"mobile\": \"228515\",\n        \"phone_num\": \"413265\",\n        \"type\": \"doctor\"\n    },\n    {\n        \"hospital_dep_id\": \"1\",\n        \"user_id\": 7,\n        \"visit_price\": \"2255\",\n        \"followup_price\": \"500\",\n        \"inpatient_visit_price\": \"500\",\n        \"note\": \"mkhjk\",\n        \"signature\": \"morhaf_image/Boqey5R6r8Rbrlpgee92a0HRJVrhsFxSVDNpHKfL.jpg\",\n        \"updated_at\": \"2024-01-28T16:41:19.000000Z\",\n        \"created_at\": \"2024-01-28T16:41:19.000000Z\",\n        \"id\": 2\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Dept_store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "eyes",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "2222222",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "moda@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "hghghhfh",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "sdsadada",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/Dept-store",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"Dept-store"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Dept_store",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "eyes",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "2222222",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "moda@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "note",
+											"value": "hghghhfh",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "sdsadada",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/Dept-store",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"Dept-store"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 16:16:27 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 16:16:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"eyes\",\n    \"phone\": \"2222222\",\n    \"email\": \"moda@gmail.com\",\n    \"address\": \"sdsadada\",\n    \"note\": \"hghghhfh\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get_all_doctor",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/get-all-doctor",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get-all-doctor"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get_all_doctor",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/get-all-doctor",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"get-all-doctor"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 16:33:35 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 16:33:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"first_name\": \"morhaf\",\n        \"last_name\": \"aldakaka\",\n        \"email\": \"morhaf@gmail.com\",\n        \"dob\": \"1998-07-07\",\n        \"gender\": \"mail\",\n        \"address\": \"llllll\",\n        \"mobile\": \"228515\",\n        \"phone_num\": \"413265\",\n        \"type\": \"doctor\",\n        \"created_at\": \"2024-01-28T16:22:57.000000Z\",\n        \"updated_at\": \"2024-01-28T16:22:57.000000Z\",\n        \"doctor\": {\n            \"id\": 1,\n            \"hospital_dep_id\": 1,\n            \"user_id\": 1,\n            \"visit_price\": 2255,\n            \"followup_price\": 500,\n            \"inpatient_visit_price\": 500,\n            \"note\": \"mkhjk\",\n            \"signature\": \"morhaf_image/qb1aUxYSmzekiEwWXpIBW9zV4cbGNxI9zYj2YoiZ.jpg\",\n            \"created_at\": \"2024-01-28T16:22:58.000000Z\",\n            \"updated_at\": \"2024-01-28T16:22:58.000000Z\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "morhaf@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "222222",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/login",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "morhaf@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "222222",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/login",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 16:37:13 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 16:37:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"1|mYSSHumAIUnDoGmK3M9UozZh4EIWPz8K1qDCzu1B8cbb043f\",\n    \"user\": {\n        \"id\": 1,\n        \"first_name\": \"morhaf\",\n        \"last_name\": \"aldakaka\",\n        \"email\": \"morhaf@gmail.com\",\n        \"dob\": \"1998-07-07\",\n        \"gender\": \"mail\",\n        \"address\": \"llllll\",\n        \"mobile\": \"228515\",\n        \"phone_num\": \"413265\",\n        \"type\": \"doctor\",\n        \"created_at\": \"2024-01-28T16:22:57.000000Z\",\n        \"updated_at\": \"2024-01-28T16:22:57.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "show-one-doctor",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/show-one-doctor/1",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"show-one-doctor",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 16:49:32 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 16:49:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"hospital_dep_id\": 1,\n    \"user_id\": 1,\n    \"visit_price\": 2255,\n    \"followup_price\": 500,\n    \"inpatient_visit_price\": 500,\n    \"note\": \"mkhjk\",\n    \"signature\": \"morhaf_image/qb1aUxYSmzekiEwWXpIBW9zV4cbGNxI9zYj2YoiZ.jpg\",\n    \"created_at\": \"2024-01-28T16:22:58.000000Z\",\n    \"updated_at\": \"2024-01-28T16:22:58.000000Z\",\n    \"user\": {\n        \"id\": 1,\n        \"first_name\": \"morhaf\",\n        \"last_name\": \"aldakaka\",\n        \"email\": \"morhaf@gmail.com\",\n        \"dob\": \"1998-07-07\",\n        \"gender\": \"mail\",\n        \"address\": \"llllll\",\n        \"mobile\": \"228515\",\n        \"phone_num\": \"413265\",\n        \"type\": \"doctor\",\n        \"created_at\": \"2024-01-28T16:22:57.000000Z\",\n        \"updated_at\": \"2024-01-28T16:22:57.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete_doctor",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/delete-doctor/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"delete-doctor",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete_doctor",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/delete-doctor/1",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"delete-doctor",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 16:56:05 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 16:56:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "\"doctor delete\""
+						}
+					]
+				},
+				{
+					"name": "delete_secrtery",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/delete-secrtery/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"delete-secrtery",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete_secrtery",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/delete-secrtery/1",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"delete-secrtery",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 17:00:33 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 17:00:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "\"secrtery delete\""
+						}
+					]
+				},
+				{
+					"name": "show_one_secr",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "show_one_secrtery",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/show-one-secr/6",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"show-one-secr",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 17:10:14 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 17:10:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 6,\n    \"first_name\": \"morhaf\",\n    \"last_name\": \"aldakaka\",\n    \"email\": \"tarrek@gmail.com\",\n    \"dob\": \"1998-07-07\",\n    \"gender\": \"mail\",\n    \"address\": \"llllll\",\n    \"mobile\": \"228515\",\n    \"phone_num\": \"413265\",\n    \"type\": \"secretary\",\n    \"created_at\": \"2024-01-28T16:40:22.000000Z\",\n    \"updated_at\": \"2024-01-28T16:40:22.000000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get-all-secrtry",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "get all secrtery",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/get-all-secr",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"get-all-secr"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 17:17:38 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 17:17:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 6,\n        \"first_name\": \"morhaf\",\n        \"last_name\": \"aldakaka\",\n        \"email\": \"tarrek@gmail.com\",\n        \"dob\": \"1998-07-07\",\n        \"gender\": \"mail\",\n        \"address\": \"llllll\",\n        \"mobile\": \"228515\",\n        \"phone_num\": \"413265\",\n        \"type\": \"secretary\",\n        \"created_at\": \"2024-01-28T16:40:22.000000Z\",\n        \"updated_at\": \"2024-01-28T16:40:22.000000Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "dept-index",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "dept-index",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/dept-index",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"dept-index"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 17:24:38 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 17:24:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"eyes\",\n        \"phone\": \"2222222\",\n        \"email\": \"moda@gmail.com\",\n        \"address\": \"sdsadada\",\n        \"note\": \"hghghhfh\",\n        \"created_at\": \"2024-01-28T16:16:27.000000Z\",\n        \"updated_at\": \"2024-01-28T16:16:27.000000Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "update-doctor",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "ubdate-doctor",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "first_name",
+											"value": "lalal",
+											"type": "text"
+										},
+										{
+											"key": "visit_price",
+											"value": "9999",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/update-doctor/7",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"update-doctor",
+										"7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 17:43:49 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 17:43:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 7,\n    \"first_name\": \"lalal\",\n    \"last_name\": \"aldakaka\",\n    \"email\": \"tar@gmail.com\",\n    \"dob\": \"1998-07-07\",\n    \"gender\": \"mail\",\n    \"address\": \"llllll\",\n    \"mobile\": \"228515\",\n    \"phone_num\": \"413265\",\n    \"type\": \"doctor\",\n    \"created_at\": \"2024-01-28T16:41:19.000000Z\",\n    \"updated_at\": \"2024-01-28T17:39:03.000000Z\",\n    \"doctor\": {\n        \"id\": 2,\n        \"hospital_dep_id\": 1,\n        \"user_id\": 7,\n        \"visit_price\": \"9999\",\n        \"followup_price\": 500,\n        \"inpatient_visit_price\": 500,\n        \"note\": \"mkhjk\",\n        \"signature\": \"morhaf_image/Boqey5R6r8Rbrlpgee92a0HRJVrhsFxSVDNpHKfL.jpg\",\n        \"created_at\": \"2024-01-28T16:41:19.000000Z\",\n        \"updated_at\": \"2024-01-28T17:43:49.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "numbers",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "numbers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/numbers",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"numbers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 17:51:40 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 17:51:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    1,\n    1,\n    1\n]"
+						}
+					]
+				},
+				{
+					"name": "update_secr",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "rami\n",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/update-secr/6",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"update-secr",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update_secr",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "first_name",
+											"value": "rami\n",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/update-secr/6",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"update-secr",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 18:21:38 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 18:21:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 6,\n    \"first_name\": \"rami\",\n    \"last_name\": \"aldakaka\",\n    \"email\": \"tarrek@gmail.com\",\n    \"dob\": \"1998-07-07\",\n    \"gender\": \"mail\",\n    \"address\": \"llllll\",\n    \"mobile\": \"228515\",\n    \"phone_num\": \"413265\",\n    \"type\": \"secretary\",\n    \"created_at\": \"2024-01-28T16:40:22.000000Z\",\n    \"updated_at\": \"2024-01-28T18:21:38.000000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update_depa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "cheast",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/update-depa/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"update-depa",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update_depa",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "cheast",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/update-depa/1",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"update-depa",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 18:33:19 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 18:33:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"cheast\",\n    \"phone\": \"2222222\",\n    \"email\": \"moda@gmail.com\",\n    \"address\": \"sdsadada\",\n    \"note\": \"hghghhfh\",\n    \"created_at\": \"2024-01-28T16:16:27.000000Z\",\n    \"updated_at\": \"2024-01-28T18:33:19.000000Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "patient",
+			"item": [
+				{
+					"name": "add_patient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "mohamd",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "hegazi",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "hamd@gamil.com",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "kldmvk",
+									"type": "text"
+								},
+								{
+									"key": "dob",
+									"value": "1999-12-1",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "m",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "dkjnv",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "21541202",
+									"type": "text"
+								},
+								{
+									"key": "zipcode",
+									"value": "4465461",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "dsbfjkvsdkn",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/add_patient",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"add_patient"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "add patient",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "first_name",
+											"value": "mohamd",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "hegazi",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "hamd@gamil.com",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "kldmvk",
+											"type": "text"
+										},
+										{
+											"key": "dob",
+											"value": "1999-12-1",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "m",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "dkjnv",
+											"type": "text"
+										},
+										{
+											"key": "mobile",
+											"value": "21541202",
+											"type": "text"
+										},
+										{
+											"key": "zipcode",
+											"value": "4465461",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "dsbfjkvsdkn",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/add_patient",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"add_patient"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jan 2024 16:16:06 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jan 2024 16:16:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"first_name\": \"mohamd\",\n    \"last_name\": \"hegazi\",\n    \"email\": \"hamd@gamil.com\",\n    \"city\": \"kldmvk\",\n    \"dob\": \"1999-12-1\",\n    \"country\": \"dsbfjkvsdkn\",\n    \"gender\": \"m\",\n    \"address\": \"dkjnv\",\n    \"mobile\": \"21541202\",\n    \"zipcode\": \"4465461\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update_patient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "loloooo",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "dob",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "21541202",
+									"type": "text"
+								},
+								{
+									"key": "zipcode",
+									"value": "4465461",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "dsbfjkvsdkn",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/update_patient/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"update_patient",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update_patient",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "first_name",
+											"value": "loloooo",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "dob",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "mobile",
+											"value": "21541202",
+											"type": "text"
+										},
+										{
+											"key": "zipcode",
+											"value": "4465461",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "dsbfjkvsdkn",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/update_patient/1",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"update_patient",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jan 2024 16:21:22 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jan 2024 16:21:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"first_name\": \"loloooo\",\n    \"last_name\": \"hegazi\",\n    \"email\": \"mohamd@gamil.com\",\n    \"city\": \"kldmvk\",\n    \"dob\": \"1999-12-01\",\n    \"gender\": \"m\",\n    \"address\": \"dkjnv\",\n    \"mobile\": \"21541202\",\n    \"country\": \"dsbfjkvsdkn\",\n    \"zipcode\": \"4465461\",\n    \"created_at\": \"2024-01-30T16:14:18.000000Z\",\n    \"updated_at\": \"2024-01-30T16:21:17.000000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "show_one_patient",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/show_one_patient/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"show_one_patient",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "show_one_patient",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/show_one_patient/1",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"show_one_patient",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jan 2024 16:22:39 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jan 2024 16:22:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"first_name\": \"loloooo\",\n    \"last_name\": \"hegazi\",\n    \"email\": \"mohamd@gamil.com\",\n    \"city\": \"kldmvk\",\n    \"dob\": \"1999-12-01\",\n    \"gender\": \"m\",\n    \"address\": \"dkjnv\",\n    \"mobile\": \"21541202\",\n    \"country\": \"dsbfjkvsdkn\",\n    \"zipcode\": \"4465461\",\n    \"created_at\": \"2024-01-30T16:14:18.000000Z\",\n    \"updated_at\": \"2024-01-30T16:21:17.000000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get_all_patient",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/get_all_patient",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get_all_patient"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get_all_patient",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/get_all_patient",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"get_all_patient"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jan 2024 16:23:39 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jan 2024 16:23:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"first_name\": \"loloooo\",\n        \"last_name\": \"hegazi\",\n        \"email\": \"mohamd@gamil.com\",\n        \"city\": \"kldmvk\",\n        \"dob\": \"1999-12-01\",\n        \"gender\": \"m\",\n        \"address\": \"dkjnv\",\n        \"mobile\": \"21541202\",\n        \"country\": \"dsbfjkvsdkn\",\n        \"zipcode\": \"4465461\",\n        \"created_at\": \"2024-01-30T16:14:18.000000Z\",\n        \"updated_at\": \"2024-01-30T16:21:17.000000Z\"\n    },\n    {\n        \"id\": 3,\n        \"first_name\": \"mohamd\",\n        \"last_name\": \"hegazi\",\n        \"email\": \"hamd@gamil.com\",\n        \"city\": \"kldmvk\",\n        \"dob\": \"1999-12-01\",\n        \"gender\": \"m\",\n        \"address\": \"dkjnv\",\n        \"mobile\": \"21541202\",\n        \"country\": \"dsbfjkvsdkn\",\n        \"zipcode\": \"4465461\",\n        \"created_at\": \"2024-01-30T16:16:06.000000Z\",\n        \"updated_at\": \"2024-01-30T16:16:06.000000Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "ward_bed_store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "number",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "mcl,clms",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/ward_store",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ward_store"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ward_store",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"number\": \"WardNumber123\",\r\n  \"status\": \"Active\",\r\n  \"bed\": [\r\n    {\r\n      \"bed_number\": \"Bed1\",\r\n      \"bed_status\": \"Occupied\"\r\n    },\r\n    {\r\n      \"bed_number\": \"Bed2\",\r\n      \"bed_status\": \"Vacant\"\r\n    }\r\n    // Add more beds as needed\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/ward_store",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"ward_store"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jan 2024 17:58:17 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jan 2024 17:58:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"number\": \"WardNumber123\",\n    \"status\": \"Active\"\n}"
+						}
+					]
+				},
+				{
+					"name": "ward_index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/ward_index",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ward_index"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ward_index",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/ward_index",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"ward_index"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jan 2024 17:03:15 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jan 2024 17:03:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"number\": \"1\",\n        \"status\": \"mcl,clms\",\n        \"created_at\": \"2024-01-30T16:56:15.000000Z\",\n        \"updated_at\": \"2024-01-30T16:56:15.000000Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "bed_index",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "bed_index",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/bed_index",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"bed_index"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jan 2024 17:04:53 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jan 2024 17:04:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"number\": \"1\",\n        \"status\": \"mcl,clms\",\n        \"created_at\": \"2024-01-30T16:56:15.000000Z\",\n        \"updated_at\": \"2024-01-30T16:56:15.000000Z\",\n        \"bed\": [\n            {\n                \"id\": 1,\n                \"number\": \"12\",\n                \"status\": \"mnmnmn\",\n                \"ward_id\": 1,\n                \"created_at\": \"2024-01-30T17:00:07.000000Z\",\n                \"updated_at\": \"2024-01-30T17:00:07.000000Z\"\n            },\n            {\n                \"id\": 2,\n                \"number\": \"1\",\n                \"status\": \"ll\",\n                \"ward_id\": 1,\n                \"created_at\": \"2024-01-30T17:01:02.000000Z\",\n                \"updated_at\": \"2024-01-30T17:01:02.000000Z\"\n            }\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "update_ward",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ward_number",
+									"value": "12222",
+									"type": "text"
+								},
+								{
+									"key": "ward_status",
+									"value": "2222",
+									"type": "text"
+								},
+								{
+									"key": "number",
+									"value": "1111111111",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "dkjdn",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/update_ward/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"update_ward",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update_ward",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "ward_number",
+											"value": "12222",
+											"type": "text"
+										},
+										{
+											"key": "ward_status",
+											"value": "2222",
+											"type": "text"
+										},
+										{
+											"key": "number",
+											"value": "1111111111",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": "dkjdn",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/update_ward/1",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"update_ward",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jan 2024 18:07:05 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jan 2024 18:07:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"number\": \"12222\",\n    \"status\": \"2222\",\n    \"created_at\": \"2024-01-30T16:56:15.000000Z\",\n    \"updated_at\": \"2024-01-30T18:07:05.000000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update_bed",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "update_bed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "number",
+											"value": "1000000",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "10000000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/update_bed/3",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"update_bed",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jan 2024 18:09:20 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jan 2024 18:09:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"number\": \"1000000\",\n    \"status\": \"10000000\",\n    \"ward_id\": 24,\n    \"created_at\": \"2024-01-30T17:58:17.000000Z\",\n    \"updated_at\": \"2024-01-30T18:09:20.000000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete_bed",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/delete_bed/5",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"delete_bed",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete_bed",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/delete_bed/5",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"delete_bed",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jan 2024 18:25:22 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jan 2024 18:25:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "\"bed bed\""
+						}
+					]
+				},
+				{
+					"name": "numbers_patient_ward_admn",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/numbers_patient_ward_admn",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"numbers_patient_ward_admn"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "numbers_patient_ward_admn",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/numbers_patient_ward_admn",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"numbers_patient_ward_admn"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jan 2024 18:36:17 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jan 2024 18:36:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    0,\n    2,\n    25\n]"
+						}
+					]
+				},
+				{
+					"name": "add_admission",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "bed_id",
+									"value": "7\n",
+									"type": "text"
+								},
+								{
+									"key": "admission_data",
+									"value": "2-5-2022",
+									"type": "text"
+								},
+								{
+									"key": "discharge_data",
+									"value": "5-5-2023",
+									"type": "text"
+								},
+								{
+									"key": "total_cost",
+									"value": "1000",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "nbkjgjff",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/add_admission",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"add_admission"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "add_admission",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "bed_id",
+											"value": "7\n",
+											"type": "text"
+										},
+										{
+											"key": "admission_data",
+											"value": "2-5-2022",
+											"type": "text"
+										},
+										{
+											"key": "discharge_data",
+											"value": "5-5-2023",
+											"type": "text"
+										},
+										{
+											"key": "total_cost",
+											"value": "1000",
+											"type": "text"
+										},
+										{
+											"key": "note",
+											"value": "nbkjgjff",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/add_admission",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"add_admission"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 06:45:18 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 06:45:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"bed_id\": \"7\",\n        \"admission_data\": \"2-5-2022\",\n        \"discharge_data\": \"5-5-2023\",\n        \"total_cost\": \"1000\",\n        \"note\": \"nbkjgjff\"\n    }\n]"
+						},
+						{
+							"name": "add_admission",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "bed_id",
+											"value": "7\n",
+											"type": "text"
+										},
+										{
+											"key": "admission_data",
+											"value": "2022-5-5",
+											"type": "text"
+										},
+										{
+											"key": "discharge_data",
+											"value": "2023-5-5",
+											"type": "text"
+										},
+										{
+											"key": "total_cost",
+											"value": "1000",
+											"type": "text"
+										},
+										{
+											"key": "note",
+											"value": "nbkjgjff",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/add_admission",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"add_admission"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 06:50:30 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 06:50:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"bed_id\": \"7\",\n        \"admission_data\": \"2022-May-05\",\n        \"discharge_data\": \"2023-May-05\",\n        \"total_cost\": \"1000\",\n        \"note\": \"nbkjgjff\"\n    }\n]"
+						}
+					]
+				}
+			]
+		}
+	]
+}

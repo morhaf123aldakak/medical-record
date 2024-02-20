@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AdmissionRequest;
 use App\Models\Bed;
 use App\Models\Patient;
 use App\Models\PatientAdmn;
 use App\Models\Ward;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class WardBedController extends Controller
@@ -113,5 +115,14 @@ class WardBedController extends Controller
         $ward=Ward::count();
         $Addm=PatientAdmn::count();
         return response()->json([$Addm,$patient,$ward]);
+    }
+    public function add_admission(AdmissionRequest $request)
+    {
+
+        $data = $request->validated();
+        $data['admission_data']=Carbon::parse($data['admission_data'])->format('Y-M-d');
+        $data['discharge_data']=Carbon::parse($data['discharge_data'])->format('Y-M-d');
+        $user = PatientAdmn::create($data);
+        return response()->json(['data'=>$user],200);
     }
 }

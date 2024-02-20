@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignIdFor(Bed::class)->constrained();
             $table->string('admission_data');
             $table->string('discharge_data');
-            $table->date('total_cost');
+            $table->integer('total_cost');
             $table->string('note');
             $table->timestamps();
         });
