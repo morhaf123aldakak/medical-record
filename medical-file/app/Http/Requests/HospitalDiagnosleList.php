@@ -26,7 +26,7 @@ class HospitalDiagnosleList extends FormRequest
             'lap_phone'=>['nullable','string'],
             'lap_mobile'=>['required','numeric'],
             'lap_email'=>['nullable','string'],
-            'note '=>['nullable','string'],
+            'note'=>['nullable','string'],
             'hospital_dep_id'=>['nullable','exists:hospital_deps,id'],
         ];
     }
