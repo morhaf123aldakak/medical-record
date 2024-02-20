@@ -2322,6 +2322,321 @@
 							"body": "[\n    {\n        \"id\": 2,\n        \"first_name\": \"morhaf\",\n        \"last_name\": \"aldakaka\",\n        \"email\": \"specialest@gmail.com\",\n        \"dob\": \"1998-07-07\",\n        \"gender\": \"mail\",\n        \"address\": \"llllll\",\n        \"mobile\": \"228515\",\n        \"phone_num\": \"413265\",\n        \"type\": \"specialest\",\n        \"created_at\": \"2024-02-11T18:25:53.000000Z\",\n        \"updated_at\": \"2024-02-11T18:25:53.000000Z\",\n        \"hospital_dep_id\": 1\n    }\n]"
 						}
 					]
+				},
+				{
+					"name": "show_one_dept",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/show_one_dept/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"show_one_dept",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "show_one_dept",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/show_one_dept/1",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"show_one_dept",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Feb 2024 19:28:02 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Feb 2024 19:28:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"eyes\",\n    \"phone\": \"2222222\",\n    \"email\": \"moda@gmail.com\",\n    \"address\": \"sdsadada\",\n    \"note\": \"hghghhfh\",\n    \"created_at\": \"2024-02-11T17:45:53.000000Z\",\n    \"updated_at\": \"2024-02-11T17:45:53.000000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "show_one_lap",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/show_one_lap/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"show_one_lap",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "show_one_lap",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/show_one_lap/1",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"show_one_lap",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Feb 2024 19:30:41 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Feb 2024 19:30:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"hospital_dep_id\": 1,\n    \"lap_address\": \"morhaf\",\n    \"lap_phone\": \"21212121\",\n    \"lap_mobile\": \"12212121\",\n    \"lap_email\": \"kndsa@gmail.com\",\n    \"note\": \"densnan\",\n    \"created_at\": \"2024-02-11T17:54:41.000000Z\",\n    \"updated_at\": \"2024-02-11T18:12:36.000000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "show_one_specialest",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/show_one_specialest/2",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"show_one_specialest",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "show_one_specialest",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/show_one_specialest/2",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"show_one_specialest",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Feb 2024 19:35:07 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Feb 2024 19:35:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"first_name\": \"morhaf\",\n    \"last_name\": \"aldakaka\",\n    \"email\": \"specialest@gmail.com\",\n    \"dob\": \"1998-07-07\",\n    \"gender\": \"mail\",\n    \"address\": \"llllll\",\n    \"mobile\": \"228515\",\n    \"phone_num\": \"413265\",\n    \"type\": \"specialest\",\n    \"created_at\": \"2024-02-11T18:25:53.000000Z\",\n    \"updated_at\": \"2024-02-11T18:25:53.000000Z\",\n    \"hospital_dep_id\": 1\n}"
+						}
+					]
 				}
 			]
 		},

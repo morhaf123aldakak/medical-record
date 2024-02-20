@@ -43,9 +43,11 @@ class HospitalDiagnosleListcontroller extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show_one_lap(string $id)
     {
-        //
+
+        $data=HospitalDiag::where('id',$id)->first();
+        return response()->json($data);
     }
 
     /**

@@ -34,6 +34,7 @@ Route::get('delete-doctor/{id}',[DoctorController::class,'delete_doctor']);
 Route::get('delete-secrtery/{id}',[AdminController::class,'delete_secrtery']);
 Route::get('get-all-secr',[AdminController::class,'get_all_secr']);
 Route::get('show-one-secr/{id}',[AdminController::class,'show_one_secr']);
+Route::get('show_one_dept/{id}',[DepartmentController::class,'show_one_dept']);
 Route::get('dept-index',[DepartmentController::class,'dept_index']);
 Route::post('update-doctor/{id}',[DoctorController::class,'update_doctor']);
 Route::get('numbers',[AdminController::class,'numbers']);
@@ -43,6 +44,8 @@ Route::get('index_lab',[HospitalDiagnosleListcontroller::class,'index_lab']);
 Route::post('store_lab',[HospitalDiagnosleListcontroller::class,'store_lab']);
 Route::post('update_diagnosl/{id}',[HospitalDiagnosleListcontroller::class,'update_diagnosl']);
 Route::get('get_all_specialest',[AdminController::class,'get_all_specialest']);
+Route::get('show_one_lap/{id}',[HospitalDiagnosleListcontroller::class,'show_one_lap']);
+Route::get('show_one_specialest/{id}',[AdminController::class,'show_one_specialest']);
 //////////////////////secrtera///////////////
 Route::post('update_patient/{id}',[PatientController::class,'update_patient']);
 Route::post('delete_patient/{id}',[PatientController::class,'delete_patient']);
