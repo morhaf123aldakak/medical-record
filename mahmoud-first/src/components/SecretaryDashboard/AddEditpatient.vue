@@ -106,6 +106,117 @@
             <input type="text" class="form-control" v-model="zipcode" />
           </div>
         </div>
+        <div class="col-6">
+          <div class="text-start">Relationship status</div>
+          <div>
+            <div class="dropdown">
+              <button
+                class="dropdown-toggle w-100 form-control"
+                type="button"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                {{ relation_state }}
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    @click="relation_state = 'Single'"
+                    :style="{
+                      color: relation_state == 'Single' ? '#e57c23' : 'black',
+                    }"
+                    >Single</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    @click="relation_state = 'Married'"
+                    :style="{
+                      color: relation_state == 'Married' ? '#e57c23' : 'black',
+                    }"
+                    >Married</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    @click="relation_state = 'Divorced'"
+                    :style="{
+                      color: relation_state == 'Divorced' ? '#e57c23' : 'black',
+                    }"
+                    >Divorced</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 my-3">
+          <h3>{{ type }} old history</h3>
+        </div>
+        <div class="col-5">
+          <div class="text-start">Disease name</div>
+          <div>
+            <input type="text" class="form-control" v-model="disease_name" />
+          </div>
+        </div>
+        <div class="col-5">
+          <div class="text-start">Medicines</div>
+          <div>
+            <input type="text" class="form-control" v-model="medicines" />
+          </div>
+        </div>
+        <div class="col-2">
+          <button
+            type="button"
+            class="submit_btn"
+            style="background-color: rgb(74, 226, 146)"
+            @click="addoldhistory()"
+          >
+            +
+          </button>
+        </div>
+        <div class="col-12">
+          {{ err_messgae }}
+        </div>
+        <div class="col-12">
+          <div class="table-responsive mt-3">
+            <table class="table table-light table-striped table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Disease</th>
+                  <th scope="col">Medicines</th>
+                  <th scope="col">Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(element, index) in old_history" :key="element.id">
+                  <th scope="row">{{ element.id }}</th>
+                  <td>
+                    {{ element.old_disease }}
+                  </td>
+                  <td>{{ element.old_medicines }}</td>
+                  <td>
+                    <button
+                      type="button"
+                      class="delete"
+                      @click="deleteoldhistory(index)"
+                    >
+                      <Icon icon="material-symbols:delete" class="icon" />
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
         <div class="col-12">
           <button
             type="button"
@@ -136,6 +247,12 @@ export default {
       city: "",
       zipcode: "",
       country: "",
+      relation_state: "",
+      disease_name: "",
+      medicines: "",
+      err_messgae: "",
+      id: 0,
+      old_history: [],
     };
   },
   components: {
@@ -143,6 +260,47 @@ export default {
   },
   props: {
     type: String,
+  },
+  methods: {
+    addoldhistory() {
+      this.err_messgae = "";
+      if (this.old_history.length > 0) {
+        for (var i = 0; i < this.old_history.length; i++) {
+          if (this.old_history[i].old_disease == this.disease_name) {
+            this.err_messgae = "This disease has been inserted";
+            return;
+          }
+        }
+      }
+      if (this.disease_name == "") {
+        this.err_messgae = "You should enter disease name";
+        return;
+      }
+      if (this.medicines == "") {
+        this.err_messgae = "You should enter medicins";
+        return;
+      }
+      this.id++;
+      this.old_history.push({
+        id: this.id,
+        old_disease: this.disease_name,
+        old_medicines: this.medicines,
+      });
+    },
+    deleteoldhistory(index) {
+      var i = index;
+      if (Object.keys(this.old_history).length == 1) {
+        this.old_history.splice(i, 1);
+        this.id--;
+        return;
+      }
+      for (i; i < Object.keys(this.old_history).length - 1; i++) {
+        this.old_history[i] = this.old_history[i + 1];
+        this.old_history[i].id = i + 1;
+      }
+      this.old_history.splice(i, 1);
+      this.id--;
+    },
   },
 };
 </script>

@@ -7,7 +7,14 @@
             {{ page_name }}({{ Object.keys(data_array).length }})
           </div>
           <div class="col-6 text-end">
-            <button type="button" class="add_button" @click="gotourl()">
+            <button
+              type="button"
+              class="add_button"
+              @click="gotourl()"
+              :style="{
+                fontSize: page_name == 'Laprotary Specialists' ? '14px' : '',
+              }"
+            >
               Add {{ page_name }}
             </button>
           </div>
@@ -34,10 +41,22 @@
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Phone</th>
-                    <th scope="col">Email</th>
-                    <th scope="col" v-if="page_name == 'Doctors'">
+                    <th scope="col" v-if="page_name == 'Labrotaries'">
+                      Address
+                    </th>
+                    <th scope="col" v-if="page_name == 'Labrotaries'">
+                      Mobile
+                    </th>
+                    <th scope="col" v-if="page_name == 'Labrotaries'">Phone</th>
+                    <th scope="col" v-if="page_name != 'Labrotaries'">Name</th>
+                    <th scope="col" v-if="page_name != 'Labrotaries'">Phone</th>
+                    <th scope="col" v-if="page_name != 'Labrotaries'">Email</th>
+                    <th
+                      scope="col"
+                      v-if="
+                        page_name == 'Doctors' || page_name == 'Labrotaries'
+                      "
+                    >
                       Department
                     </th>
                     <th scope="col">Edit</th>
@@ -46,16 +65,40 @@
                 <tbody>
                   <tr v-for="element in shown_data" :key="element.id">
                     <th scope="row">{{ element.id }}</th>
-                    <td v-if="page_name != 'Departments'">
+                    <td
+                      v-if="
+                        page_name != 'Departments' && page_name != 'Labrotaries'
+                      "
+                    >
                       {{ element.first_name + " " + element.last_name }}
                     </td>
-                    <td v-else>
+                    <td v-else-if="page_name != 'Labrotaries'">
                       {{ element.name }}
                     </td>
-                    <td>{{ element.phone }}</td>
-                    <td>{{ element.email }}</td>
-                    <td v-if="page_name == 'Doctors'">
+                    <td v-if="page_name != 'Labrotaries'">
+                      {{ element.phone }}
+                    </td>
+                    <td v-if="page_name != 'Labrotaries'">
+                      {{ element.email }}
+                    </td>
+                    <td
+                      v-if="
+                        page_name == 'Doctors' && page_name != 'Labrotaries'
+                      "
+                    >
                       {{ element.department }}
+                    </td>
+                    <td v-if="page_name == 'Labrotaries'">
+                      {{ element.lab_address }}
+                    </td>
+                    <td v-if="page_name == 'Labrotaries'">
+                      {{ element.lab_mobile }}
+                    </td>
+                    <td v-if="page_name == 'Labrotaries'">
+                      {{ element.lab_phone }}
+                    </td>
+                    <td v-if="page_name == 'Labrotaries'">
+                      {{ element.department_name }}
                     </td>
                     <td>
                       <button
@@ -189,7 +232,11 @@ export default {
         this.shown_data = this.data_array;
       } else {
         if (Object.keys(this.data_array).length > 0)
-          if (this.page_name != "Departments" && this.page_name != "Wards") {
+          if (
+            this.page_name != "Departments" &&
+            this.page_name != "Wards" &&
+            this.page_name != "Labrotaries"
+          ) {
             for (var i = 0; i < Object.keys(this.data_array).length; i++) {
               let name =
                 this.data_array[i].first_name.toLowerCase() +
@@ -213,11 +260,22 @@ export default {
                 }
               }
             }
-          } else {
+          } else if (this.page_name == "Wards") {
             if (Object.keys(this.data_array).length > 0) {
               for (i = 0; i < Object.keys(this.data_array).length; i++) {
                 let number = this.data_array[i].number;
                 if (number == this.searchbar) {
+                  this.shown_data[i] = this.data_array[i];
+                }
+              }
+            }
+          } else {
+            if (Object.keys(this.data_array).length > 0) {
+              for (i = 0; i < Object.keys(this.data_array).length; i++) {
+                let department =
+                  this.data_array[i].department_name.toLowerCase();
+                let result = department.search(this.searchbar.toLowerCase());
+                if (!result) {
                   this.shown_data[i] = this.data_array[i];
                 }
               }
