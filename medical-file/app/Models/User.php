@@ -46,4 +46,8 @@ class User extends Authenticatable
     {
         return $this->hasOne(HospitalDep::class ,'id','hospital_dep_id');
     }
+    public function spla()
+    {
+        return $this->hasOne(HospitalDep::class ,'id','hospital_dep_id');
+    }
 }

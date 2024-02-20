@@ -80,7 +80,7 @@ class AdminController extends Controller
 
     public function get_all_specialest()
     {
-        $data= User::where('type','specialest')->get();
+        $data= User::where('type','specialest')->with('spla')->get();
         return response()->json($data);
     }
 
@@ -114,6 +114,7 @@ class AdminController extends Controller
         $data=User::where('id',$id)->first();
         return response()->json($data);
     }
+
 
 
 }
