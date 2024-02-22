@@ -3110,7 +3110,7 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "127.0.0.1:8000/api/show_one_patient/1",
+							"raw": "127.0.0.1:8000/api/show_one_patient/19",
 							"host": [
 								"127",
 								"0",
@@ -3121,7 +3121,7 @@
 							"path": [
 								"api",
 								"show_one_patient",
-								"1"
+								"19"
 							]
 						}
 					},
@@ -3142,7 +3142,7 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "127.0.0.1:8000/api/show_one_patient/1",
+									"raw": "127.0.0.1:8000/api/show_one_patient/19",
 									"host": [
 										"127",
 										"0",
@@ -3153,7 +3153,7 @@
 									"path": [
 										"api",
 										"show_one_patient",
-										"1"
+										"19"
 									]
 								}
 							},
@@ -3167,11 +3167,11 @@
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 30 Jan 2024 16:22:39 GMT"
+									"value": "Thu, 22 Feb 2024 00:54:58 GMT"
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 30 Jan 2024 16:22:39 GMT"
+									"value": "Thu, 22 Feb 2024 00:54:58 GMT"
 								},
 								{
 									"key": "Connection",
@@ -3195,7 +3195,7 @@
 								},
 								{
 									"key": "X-RateLimit-Remaining",
-									"value": "59"
+									"value": "58"
 								},
 								{
 									"key": "Access-Control-Allow-Origin",
@@ -3203,7 +3203,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": 1,\n    \"first_name\": \"loloooo\",\n    \"last_name\": \"hegazi\",\n    \"email\": \"mohamd@gamil.com\",\n    \"city\": \"kldmvk\",\n    \"dob\": \"1999-12-01\",\n    \"gender\": \"m\",\n    \"address\": \"dkjnv\",\n    \"mobile\": \"21541202\",\n    \"country\": \"dsbfjkvsdkn\",\n    \"zipcode\": \"4465461\",\n    \"created_at\": \"2024-01-30T16:14:18.000000Z\",\n    \"updated_at\": \"2024-01-30T16:21:17.000000Z\"\n}"
+							"body": "{\n    \"id\": 19,\n    \"first_name\": \"mohamd\",\n    \"last_name\": \"hegazi\",\n    \"email\": \"hddmp12@gamil.com\",\n    \"city\": \"kldmvk\",\n    \"dob\": \"1999-12-01\",\n    \"gender\": \"m\",\n    \"address\": \"dkjnv\",\n    \"mobile\": \"21541202\",\n    \"country\": \"dsbfjkvsdkn\",\n    \"zipcode\": \"4465461\",\n    \"created_at\": \"2024-02-21T23:41:59.000000Z\",\n    \"updated_at\": \"2024-02-21T23:41:59.000000Z\",\n    \"Relationship_Status\": \"skdcouidn\",\n    \"old\": [\n        {\n            \"id\": 8,\n            \"patient_id\": 19,\n            \"old_medicines\": \"dfdsv\",\n            \"old_disease\": \"VDVDV\",\n            \"created_at\": \"2024-02-22T00:50:31.000000Z\",\n            \"updated_at\": \"2024-02-22T00:50:31.000000Z\"\n        },\n        {\n            \"id\": 9,\n            \"patient_id\": 19,\n            \"old_medicines\": \"love\",\n            \"old_disease\": \"you\",\n            \"created_at\": \"2024-02-22T00:53:07.000000Z\",\n            \"updated_at\": \"2024-02-22T00:53:07.000000Z\"\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -4533,6 +4533,359 @@
 							],
 							"cookie": [],
 							"body": "[\n    {\n        \"id\": 6,\n        \"patient_id\": 11,\n        \"doctor_id\": 1,\n        \"date\": \"2022-11-5\",\n        \"note\": \"jbdwqkja\",\n        \"created_at\": \"2024-02-11T19:34:47.000000Z\",\n        \"updated_at\": \"2024-02-11T19:34:47.000000Z\",\n        \"patient_admn_id\": 12,\n        \"patient\": {\n            \"id\": 11,\n            \"first_name\": \"mohamd\",\n            \"last_name\": \"hegazi\",\n            \"email\": \"hamdppp12@gamil.com\",\n            \"city\": \"kldmvk\",\n            \"dob\": \"1999-12-01\",\n            \"gender\": \"m\",\n            \"address\": \"dkjnv\",\n            \"mobile\": \"21541202\",\n            \"country\": \"dsbfjkvsdkn\",\n            \"zipcode\": \"4465461\",\n            \"created_at\": \"2024-02-10T19:38:38.000000Z\",\n            \"updated_at\": \"2024-02-10T19:38:38.000000Z\",\n            \"Relationship_Status\": \"skdcouidn\"\n        },\n        \"doctor\": {\n            \"id\": 1,\n            \"user_id\": 5,\n            \"visit_price\": 2255,\n            \"followup_price\": 500,\n            \"inpatient_visit_price\": 500,\n            \"note\": \"mkhjk\",\n            \"signature\": \"morhaf_image/YKyWK9XdZjhdpKBv1k1QmjGq3PeQDDedsRLeCeXf.png\",\n            \"created_at\": \"2024-02-11T19:30:18.000000Z\",\n            \"updated_at\": \"2024-02-11T19:30:18.000000Z\",\n            \"user\": {\n                \"id\": 5,\n                \"first_name\": \"morhaf\",\n                \"last_name\": \"aldakaka\",\n                \"email\": \"doctor@gmail.com\",\n                \"dob\": \"1998-07-07\",\n                \"gender\": \"mail\",\n                \"address\": \"llllll\",\n                \"mobile\": \"228515\",\n                \"phone_num\": \"413265\",\n                \"type\": \"doctor\",\n                \"created_at\": \"2024-02-11T19:30:18.000000Z\",\n                \"updated_at\": \"2024-02-11T19:30:18.000000Z\",\n                \"hospital_dep_id\": 1\n            }\n        },\n        \"adms\": {\n            \"id\": 12,\n            \"admission_data\": \"2022-5-5\",\n            \"discharge_data\": \"2024-5-12\",\n            \"total_cost\": 10000000,\n            \"note\": \"nbkjgjff\",\n            \"created_at\": \"2024-02-11T19:34:47.000000Z\",\n            \"updated_at\": \"2024-02-11T19:36:49.000000Z\",\n            \"ward_id\": 1,\n            \"bed_id\": 7,\n            \"ward\": {\n                \"id\": 1,\n                \"number\": \"12222\",\n                \"status\": \"2222\",\n                \"created_at\": \"2024-01-30T16:56:15.000000Z\",\n                \"updated_at\": \"2024-01-30T18:07:05.000000Z\",\n                \"bed\": [\n                    {\n                        \"id\": 6,\n                        \"number\": \"Bed2\",\n                        \"status\": \"Vacant\",\n                        \"ward_id\": 1,\n                        \"created_at\": \"2024-01-30T18:24:58.000000Z\",\n                        \"updated_at\": \"2024-01-30T18:24:58.000000Z\"\n                    }\n                ]\n            }\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "delete_old",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/delete_old/7",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"delete_old",
+								"7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete_old",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/delete_old/7",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"delete_old",
+										"7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Feb 2024 00:22:31 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Feb 2024 00:22:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "\"delete old history\""
+						}
+					]
+				},
+				{
+					"name": "add_Patient_Old_History",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "patient_id",
+									"value": "19",
+									"type": "text"
+								},
+								{
+									"key": "old_medicines",
+									"value": "love",
+									"type": "text"
+								},
+								{
+									"key": "old_disease",
+									"value": "you",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/add_Patient_Old_History",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"add_Patient_Old_History"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "add_Patient_Old_History",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "patient_id",
+											"value": "19",
+											"type": "text"
+										},
+										{
+											"key": "old_medicines",
+											"value": "love",
+											"type": "text"
+										},
+										{
+											"key": "old_disease",
+											"value": "you",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/api/add_Patient_Old_History",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"add_Patient_Old_History"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Feb 2024 00:53:07 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Feb 2024 00:53:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"patient_id\": \"19\",\n    \"old_medicines\": \"love\",\n    \"old_disease\": \"you\",\n    \"updated_at\": \"2024-02-22T00:53:07.000000Z\",\n    \"created_at\": \"2024-02-22T00:53:07.000000Z\",\n    \"id\": 9\n}"
+						}
+					]
+				},
+				{
+					"name": "show_one_ward",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/show_one_ward/26",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"show_one_ward",
+								"26"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "show_one_ward",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/show_one_ward/26",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"show_one_ward",
+										"26"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Feb 2024 23:30:50 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Feb 2024 23:30:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 26,\n    \"number\": \"WardNumber123\",\n    \"status\": \"Active\",\n    \"created_at\": \"2024-02-02T06:25:19.000000Z\",\n    \"updated_at\": \"2024-02-02T06:25:19.000000Z\",\n    \"bed\": [\n        {\n            \"id\": 7,\n            \"number\": \"Bed1\",\n            \"status\": \"Occupied\",\n            \"ward_id\": 26,\n            \"created_at\": \"2024-02-02T06:25:19.000000Z\",\n            \"updated_at\": \"2024-02-02T06:25:19.000000Z\"\n        },\n        {\n            \"id\": 8,\n            \"number\": \"Bed2\",\n            \"status\": \"Vacant\",\n            \"ward_id\": 26,\n            \"created_at\": \"2024-02-02T06:25:19.000000Z\",\n            \"updated_at\": \"2024-02-02T06:25:19.000000Z\"\n        }\n    ]\n}"
 						}
 					]
 				}

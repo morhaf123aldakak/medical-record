@@ -60,6 +60,21 @@ class PatientController extends Controller
             return response()->json($user);
         }
     }
+    public function add_Patient_Old_History(request $request)
+    {
+
+        $data['patient_id'] = $request->patient_id;
+        $data['old_medicines'] = $request->old_medicines;
+        $data['old_disease'] = $request->old_disease;
+        $data = PatientOldHistory::create($data);
+        return response()->json($data);
+    }
+    public function delete_old($id)
+    {
+        $data=PatientOldHistory::find($id);
+        $data->delete();
+        return response()->json('delete old history');
+    }
 
 
     /**
@@ -67,7 +82,7 @@ class PatientController extends Controller
      */
     public function show_one_patient($id)
     {
-        $data = Patient::where('id', $id)->first();
+        $data = Patient::with('old')->where('id', $id)->first();
         return response()->json($data);
     }
 

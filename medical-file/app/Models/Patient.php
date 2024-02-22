@@ -15,7 +15,7 @@ class Patient extends Model
     }
     public function old()
     {
-        return $this->hasOne(PatientOldHistory::class);
+        return $this->hasMany(PatientOldHistory::class);
     }
 
 }

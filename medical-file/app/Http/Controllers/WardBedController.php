@@ -153,4 +153,9 @@ public function get_admissions(){
     return response()->json($data);
 
 }
+public function show_one_ward($id)
+{
+    $data =Ward::with('bed')->where('id', $id)->first();
+    return response()->json($data);
+}
 }

@@ -24,4 +24,6 @@ class PatientAdmn extends Model
 
 
 
+
+
 }
