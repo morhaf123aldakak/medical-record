@@ -61,9 +61,14 @@ class WardBedController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function add_bed(Request $request)
     {
-        //
+
+        $data['ward_id'] = $request->ward_id ;
+        $data['status'] = $request->status;
+        $data['number'] = $request->number;
+        $data= Bed::create($data);
+        return response()->json($data);
     }
 
     /**

@@ -66,6 +66,7 @@ Route::get('delete_old/{id}',[PatientController::class,'delete_old']);
 Route::post('add_Patient_Old_History',[PatientController::class,'add_Patient_Old_History']);
 Route::get('show_one_admission/{id}',[WardBedController::class,'show_one_admission']);
 Route::get('show_one_ward/{id}',[WardBedController::class,'show_one_ward']);
+Route::post('add_bed',[WardBedController::class,'add_bed']);
 /////////////////////////lap/////////////////////////////
 Route::get('number_diagnols',[HospitalDiagnosleListcontroller::class,'number_diagnols']);
 Route::get('show_test',[HospitalDiagnosleListcontroller::class,'show_test'])->middleware('auth:sanctum');

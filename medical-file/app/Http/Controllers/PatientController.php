@@ -99,8 +99,6 @@ class PatientController extends Controller
      */
     public function update_patient(Request $request, $id)
     {
-
-
         $data = Patient::where('id', $id)->first();
         $data->update([
             'first_name' => $request->first_name ?? $data->first_name,
@@ -114,11 +112,11 @@ class PatientController extends Controller
             'country' => $request->country ?? $data->country,
             'zipcode' => $request->zipcode ?? $data->zipcode,
         ]);
-        $data->old->update([
-            'patient_id' => $request->patient_id ?? $data->patient_id,
-            'old_medicines' => $request->old_medicines ?? $data->old_medicines,
-            'old_disease' => $request->old_disease ?? $data->old_disease,
-        ]);
+        //$data->old->update([
+          //  'patient_id' => $request->patient_id ?? $data->patient_id,
+            //'old_medicines' => $request->old_medicines ?? $data->old_medicines,
+            //'old_disease' => $request->old_disease ?? $data->old_disease,
+       //]);
         return response()->json($data);
     }
 
