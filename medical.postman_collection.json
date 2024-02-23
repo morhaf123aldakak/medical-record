@@ -5031,6 +5031,111 @@
 							"body": "{\n    \"ward_id\": \"22\",\n    \"status\": \"morhaf\",\n    \"number\": \"12\",\n    \"updated_at\": \"2024-02-23T14:17:13.000000Z\",\n    \"created_at\": \"2024-02-23T14:17:13.000000Z\",\n    \"id\": 9\n}"
 						}
 					]
+				},
+				{
+					"name": "show_one_admission",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/show_one_admission/12",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"show_one_admission",
+								"12"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "show_one_admission",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "127.0.0.1:8000/api/show_one_admission/12",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"show_one_admission",
+										"12"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Feb 2024 21:11:23 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Feb 2024 21:11:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 12,\n        \"admission_data\": \"2022-5-5\",\n        \"discharge_data\": \"2024-5-12\",\n        \"total_cost\": 10000000,\n        \"note\": \"nbkjgjff\",\n        \"created_at\": \"2024-02-11T19:34:47.000000Z\",\n        \"updated_at\": \"2024-02-11T19:36:49.000000Z\",\n        \"ward_id\": 1,\n        \"bed_id\": 7,\n        \"his\": [\n            {\n                \"id\": 6,\n                \"patient_id\": 11,\n                \"doctor_id\": 1,\n                \"date\": \"2022-5-11\",\n                \"note\": \"kdn\",\n                \"created_at\": \"2024-02-11T19:34:47.000000Z\",\n                \"updated_at\": \"2024-02-18T18:56:57.000000Z\",\n                \"patient_admn_id\": 12\n            }\n        ]\n    }\n]"
+						}
+					]
 				}
 			]
 		},

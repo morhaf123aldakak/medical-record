@@ -21,6 +21,9 @@ class PatientAdmn extends Model
     public function bedd (){
         return $this->hasOne(Bed::class ,'id','bed_id');
     }
+    public function his (){
+        return $this->hasMany(PatientHistory::class);
+    }
 
 
 
