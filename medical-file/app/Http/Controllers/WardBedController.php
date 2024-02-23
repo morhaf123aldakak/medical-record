@@ -153,6 +153,7 @@ class WardBedController extends Controller
         ]);
         return response()->json($data);
     }
+<<<<<<< HEAD
     public function get_admissions()
     {
         $data = PatientHistory::with('patient', 'doctor', 'adms')->get();
@@ -163,4 +164,22 @@ class WardBedController extends Controller
         $data = Ward::with('bed')->where('id', $id)->first();
         return response()->json($data);
     }
+=======
+public function get_admissions(){
+    $data=PatientHistory::with('patient','doctor','adms')->get();
+    return response()->json($data);
+
+}
+public function show_one_ward($id)
+{
+    $data =Ward::with('bed')->where('id', $id)->first();
+    return response()->json($data);
+}
+public function show_one_admission($id)
+{
+        $data=PatientAdmn::with('his')->where('id',$id)->get();
+        return response()->json($data);
+
+}
+>>>>>>> main
 }
