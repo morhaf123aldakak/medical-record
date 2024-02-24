@@ -165,7 +165,7 @@ class WardBedController extends Controller
     }
     public function show_one_admission($id)
     {
-        $data = PatientAdmn::with('his')->where('id', $id)->get();
+        $data = PatientHistory::with('adms', 'patient', 'doctor')->where('patient_admn_id', $id)->get();
         return response()->json($data);
     }
 }
