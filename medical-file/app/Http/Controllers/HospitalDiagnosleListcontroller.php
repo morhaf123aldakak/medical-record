@@ -18,9 +18,8 @@ class HospitalDiagnosleListcontroller extends Controller
     public function index_lab()
     {
 
-       $data=HospitalDiag::with('lap')->get();
-       return response()->json($data);
-
+        $data = HospitalDiag::with('lap')->get();
+        return response()->json($data);
     }
 
     /**
@@ -36,7 +35,7 @@ class HospitalDiagnosleListcontroller extends Controller
      */
     public function store_lab(HospitalDiagnosleList $request)
     {
-        $data=$request->validated();
+        $data = $request->validated();
         HospitalDiag::create($data);
         return response()->json($data);
     }
@@ -47,7 +46,7 @@ class HospitalDiagnosleListcontroller extends Controller
     public function show_one_lap(string $id)
     {
 
-        $data=HospitalDiag::where('id',$id)->first();
+        $data = HospitalDiag::where('id', $id)->first();
         return response()->json($data);
     }
 
@@ -64,18 +63,18 @@ class HospitalDiagnosleListcontroller extends Controller
      */
     public function update_diagnosl(Request $request, string $id)
     {
-        $data=HospitalDiag::where('id',$id)->first();
+        $data = HospitalDiag::where('id', $id)->first();
         $data->update([
-        'lap_address'=>$request->lap_address ?? $data->lap_address,
-        'lap_phone'=>$request->lap_phone??$data->lap_phone,
-        'lap_mobile'=>$request->lap_mobile??$data->lap_mobile,
-        'lap_email'=>$request->lap_email??$data->lap_email,
-        'note'=>$request->note??$data->note,
-        'hospital_dep_id'=>$request->hospital_dep_id??$data->hospital_dep_id,
+            'lap_address' => $request->lap_address ?? $data->lap_address,
+            'lap_phone' => $request->lap_phone ?? $data->lap_phone,
+            'lap_mobile' => $request->lap_mobile ?? $data->lap_mobile,
+            'lap_email' => $request->lap_email ?? $data->lap_email,
+            'note' => $request->note ?? $data->note,
+            'hospital_dep_id' => $request->hospital_dep_id ?? $data->hospital_dep_id,
 
         ]);
         return response()->json($data);
-        }
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -84,47 +83,48 @@ class HospitalDiagnosleListcontroller extends Controller
     {
         //
     }
-    public function number_diagnols(){
-        $data=PatientDiagnosleHistory::count();
+    public function number_diagnols()
+    {
+        $data = PatientDiagnosleHistory::count();
         return response()->json($data);
     }
     public function show_test()
     {
-        $data = User::where('id' , auth()->user()->id)->first();
-        $lap = HospitalDiag::where('hospital_dep_id' ,$data->hospital_dep_id )->pluck('id');
-        $tests = PatientDiagnosleHistory::whereIn('hospital_diag_id' , $lap)->get();
+        $data = User::where('id', auth()->user()->id)->first();
+        $lap = HospitalDiag::where('hospital_dep_id', $data->hospital_dep_id)->pluck('id');
+        $tests = PatientDiagnosleHistory::with('adms', 'patient', 'doctor', 'Patient_History')->whereIn('hospital_diag_id', $lap)->get();
 
-    return response()->json($tests);
+        return response()->json($tests);
     }
     public function store_test(request $request)
     {
-       // $data ['doctor_id']= $request->doctor_id;
+        // $data ['doctor_id']= $request->doctor_id;
         //$data ['patient_id']= $request->patient_id;
-        $data ['date']= $request->date ;
-        $data ['note']= $request->note ;
-        $data ['hospital_diag_id']= $request->hospital_diag_id ;
-        $data['patient_history_id']=$request->patient_history_id ;
-        $his= PatientHistory::where('id', $request->patient_history_id)->get();
-        $data ['doctor_id']= $his[0]->doctor_id;
-        $data ['patient_id']= $his[0]->patient_id;
+        $data['date'] = $request->date;
+        $data['note'] = $request->note;
+        $data['hospital_diag_id'] = $request->hospital_diag_id;
+        $data['patient_history_id'] = $request->patient_history_id;
+        $data['diag_price'] = null;
+        $his = PatientHistory::where('id', $request->patient_history_id)->get();
+        $data['doctor_id'] = $his[0]->doctor_id;
+        $data['patient_id'] = $his[0]->patient_id;
         $user = PatientDiagnosleHistory::create($data);
 
         return response()->json($user);
     }
-    public function ubdet_test(request $request ,$id)
+    public function ubdet_test(request $request, $id)
     {
-        $data=PatientDiagnosleHistory:: where('id',$id)->first();
+        $data = PatientDiagnosleHistory::where('id', $id)->first();
         $data->update([
-            'lap_note'=>$request->lap_note??$data->note,
-            'diag_price'=>$request->diag_price??$data->diag_price,
+            'lap_note' => $request->lap_note ?? $data->note,
+            'diag_price' => $request->diag_price ?? $data->diag_price,
         ]);
         return response()->json($data);
     }
 
     public function get_test($id)
     {
-        $data = PatientDiagnosleHistory::where('id' , $id)->first();
+        $data = PatientDiagnosleHistory::where('id', $id)->first();
         return response()->json($data);
     }
-
 }
