@@ -29,6 +29,10 @@ class PatientHistory extends Model
     public function hestory(){
         return $this->hasMany(PatientDiagnosleHistory::class);
     }
+    public function old_hestory()
+    {
+        return $this->hasMany(PatientOldHistory::class ,'patient_id','patient_id');
+    }
 
     public function dsess(){
         return $this->hasOne(Disease::class);

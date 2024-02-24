@@ -110,7 +110,7 @@ class DoctorController extends Controller
     }
     public function data_doctor($id)
     {
-        $data = PatientHistory::with('patient', 'adms', 'hestory', 'dsess')->where('id', $id)->get();
+        $data = PatientHistory::with('patient', 'adms', 'hestory', 'dsess','old_hestory')->where('id', $id)->get();
         return response()->json($data);
     }
     public function data(Request $request, $id)

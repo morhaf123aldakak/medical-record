@@ -6,6 +6,7 @@ use App\Http\Requests\HospitalDiagnosleList;
 use App\Models\HospitalDep;
 use App\Models\HospitalDiag;
 use App\Models\PatientDiagnosleHistory;
+use App\Models\PatientHistory;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -97,13 +98,18 @@ class HospitalDiagnosleListcontroller extends Controller
     }
     public function store_test(request $request)
     {
-        $data ['doctor_id']= $request->doctor_id;
-        $data ['patient_id']= $request->patient_id;
+       // $data ['doctor_id']= $request->doctor_id;
+        //$data ['patient_id']= $request->patient_id;
         $data ['date']= $request->date ;
+        $data ['note']= $request->note ;
         $data ['hospital_diag_id']= $request->hospital_diag_id ;
         $data['patient_history_id']=$request->patient_history_id ;
+        $his= PatientHistory::where('id', $request->patient_history_id)->get();
+        $data ['doctor_id']= $his[0]->doctor_id;
+        $data ['patient_id']= $his[0]->patient_id;
         $user = PatientDiagnosleHistory::create($data);
-        return response()->json($data);
+
+        return response()->json($user);
     }
     public function ubdet_test(request $request ,$id)
     {
