@@ -110,7 +110,7 @@ class DoctorController extends Controller
     }
     public function data_doctor($id)
     {
-        $data = PatientHistory::with('patient', 'adms', 'hestory', 'dsess','old_hestory')->where('id', $id)->get();
+        $data = PatientHistory::with('patient', 'adms', 'hestory', 'dsess', 'old_hestory')->where('id', $id)->get();
         return response()->json($data);
     }
     public function data(Request $request, $id)
@@ -124,10 +124,20 @@ class DoctorController extends Controller
         ]);
 
         if ($request->chronic == 'true') {
-            $old['old_disease']                 = $request->name;
-            $old['old_medicines']            = $request->medicines;
-            $old['patient_id']            = $id;
-            PatientOldHistory::create($old);
+            $flag = 0;
+            $chronic = PatientOldHistory::where("patient_id", $id)->get();
+            for ($i = 0; $i < count($chronic); $i++) {
+                if ($chronic[$i]->old_disease == $request->name) {
+                    $flag = 1;
+                    break;
+                }
+            }
+            if (!$flag) {
+                $old['old_disease']                 = $request->name;
+                $old['old_medicines']            = $request->medicines;
+                $old['patient_id']            = $id;
+                PatientOldHistory::create($old);
+            }
         }
 
         $diss['name']                 = $request->name;
@@ -137,8 +147,8 @@ class DoctorController extends Controller
         $diss['patient_history_id']   = $request->patient_history_id;
         Disease::create($diss);
         if ($request->follow == 'true') {
-            $follow['date']                   = $request->date;
-            $follow['note']                   = $request->note;
+            $follow['date']                   = $request->follow_date;
+            $follow['note']                   = $request->follow_note;
             $follow['total_price']            = $request->total_price;
             $follow['patient_history_id']    = $request->patient_history_id;
             PatientFollowup::create($follow);
