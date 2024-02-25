@@ -119,6 +119,7 @@
 import router from "@/router";
 import SpecialistSidebar from "@/components/LapSpecialistDashboard/SpecialistSidebar.vue";
 import { Icon } from "@iconify/vue";
+import axios from "axios";
 export default {
   name: "diagnosles-admissions",
   data() {
@@ -128,44 +129,7 @@ export default {
       data_type: "active",
       d_num: 0,
       doctor_note: "",
-      data_array: {
-        0: {
-          id: 1,
-          doctor_name: "Ahmad Alahmad",
-          first_name: "mode",
-          last_name: "mmm",
-          date: "20-1-1999",
-          diagnosistest_price: 200,
-          doctor_note: "Test1",
-        },
-        1: {
-          id: 2,
-          doctor_name: "Ahmad Alahmad",
-          first_name: "mode",
-          last_name: "kasem",
-          date: "20-1-1999",
-          diagnosistest_price: 200,
-          doctor_note: "Test2",
-        },
-        2: {
-          id: 3,
-          doctor_name: "Ahmad Alahmad",
-          first_name: "Mohamad",
-          last_name: "samer",
-          date: "20-1-1999",
-          diagnosistest_price: null,
-          doctor_note: "Test3",
-        },
-        3: {
-          id: 4,
-          doctor_name: "Ahmad Alahmad",
-          first_name: "Ali",
-          last_name: "abd",
-          date: "20-1-1999",
-          diagnosistest_price: null,
-          doctor_note: "Test4",
-        },
-      },
+      data_array: {},
     };
   },
   components: {
@@ -244,9 +208,36 @@ export default {
         element2.style.opacity = 1;
       }
     },
+    getdata() {
+      const Token = window.localStorage.getItem("token");
+      axios("http://127.0.0.1:8000/api/show_test", {
+        method: "get",
+        headers: { Authorization: `Bearer ${Token}` },
+      })
+        .then((response) => {
+          for (var i = 0; i < response.data.length; i++) {
+            this.data_array[i] = {
+              id: response.data[i].id,
+              doctor_name:
+                response.data[i].doctor.user.first_name +
+                " " +
+                response.data[i].doctor.user.last_name,
+              first_name: response.data[i].patient.first_name,
+              last_name: response.data[i].patient.last_name,
+              date: response.data[i].date,
+              diagnosistest_price: response.data[i].diag_price,
+              doctor_note: response.data[i].note,
+            };
+          }
+          this.searchdata();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
   mounted() {
-    this.searchdata();
+    this.getdata();
   },
 };
 </script>

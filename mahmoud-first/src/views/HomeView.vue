@@ -38,19 +38,9 @@
       </div>
     </div>
     <div class="overlay" id="popup1" style="visibility: hidden; opacity: 0">
-      <div class="popup">
-        <button type="button" class="close" @click="show_hide()">X</button>
-        <div class="content desc p-5 mt-2" v-if="state == 'pending'">
-          <h4>Your request still pending</h4>
-        </div>
-        <div
-          class="content desc w-100 flex-center mb-4"
-          v-if="state == 'pending'"
-        >
+      <div class="popup flex-center" style="width: 100dvw; height: 100dvh">
+        <div class="content desc w-100 flex-center mb-4">
           <loading-page></loading-page>
-        </div>
-        <div class="content desc w-100 my-5" v-if="state == 'active'">
-          <h4>Welcome back {{ fname + " " + lname }}</h4>
         </div>
       </div>
     </div>
@@ -60,6 +50,7 @@
 <script>
 // @ is an alias to /src
 import LoadingPage from "@/components/LoadingPage.vue";
+import router from "@/router";
 import axios from "axios";
 export default {
   name: "home-view",
@@ -84,8 +75,9 @@ export default {
         window.alert("You should enter password");
         return;
       }
+      this.show_hide();
       axios({
-        url: "http://127.0.0.1:8000/api/Login",
+        url: "http://127.0.0.1:8000/api/login",
         method: "post",
         data: {
           email: this.email,
@@ -93,11 +85,17 @@ export default {
         },
       })
         .then((response) => {
-          this.state = response.data.user.State;
           window.localStorage.setItem("token", response.data.token);
-          this.fname = response.data.user.fname;
-          this.lname = response.data.user.lname;
-          this.show_hide();
+          if (response.data.user.type == "admin") {
+            this.show_hide();
+            router.push("/Admin-Home");
+          } else if (response.data.user.type == "doctor") {
+            router.push("/Doctor-Homepage");
+          } else if (response.data.user.type == "specialest") {
+            router.push("/Specialist-Homepage");
+          } else {
+            router.push("/Secretary-Homepage");
+          }
         })
         .catch((error) => {
           console.log(error);
@@ -106,8 +104,10 @@ export default {
     show_hide() {
       const element2 = document.getElementById("popup1");
       if (element2.style.visibility == "visible") {
-        element2.style.visibility = "hidden";
-        element2.style.opacity = 0;
+        setTimeout(function () {
+          element2.style.visibility = "hidden";
+          element2.style.opacity = 0;
+        }, 1000);
       } else {
         element2.style.visibility = "visible";
         element2.style.opacity = 1;

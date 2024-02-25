@@ -106,13 +106,16 @@
           <div class="col-12 my-3">
             <h3><b>Admission information:</b></h3>
           </div>
-          <div class="col-6">
+          <div class="col-6 my-3">
             <div>
               <h5><b>Admission date:</b></h5>
             </div>
             <div>{{ patient.admission.admission_date }}</div>
           </div>
-          <div class="col-6" v-if="patient.admission.discharge_date != null">
+          <div
+            class="col-6 my-3"
+            v-if="patient.admission.discharge_date != null"
+          >
             <div>
               <h5><b>Discharge date:</b></h5>
             </div>
@@ -130,7 +133,7 @@
             </div>
             <div>{{ patient.admission.bed_no }}</div>
           </div>
-          <div class="col-12 mb-3">
+          <div class="col-6 my-3">
             <div>
               <h5><b>Note:</b></h5>
             </div>
@@ -152,7 +155,7 @@
           </div>
           <div class="col-12 my-3">
             <div>
-              <h5><b>Note:</b></h5>
+              <h5><b>Doctor's diagnosis note:</b></h5>
             </div>
             <div>
               <textarea
@@ -168,7 +171,7 @@
           <div class="col-6 d-flex justify-content-end align-items-center">
             <button
               class="add_diagnosle"
-              @click="$router.push('/Doctor-Add-Diagnosle')"
+              @click="$router.push('/Doctor-Add-Diagnosle?id=' + patient.id)"
             >
               Ask for diagnosle
             </button>
@@ -210,7 +213,7 @@
                         show_hide();
                       "
                     >
-                      {{ element.doctor_note }}
+                      {{ element.note }}
                     </td>
                     <td
                       @click="
@@ -279,19 +282,8 @@
               ></textarea>
             </div>
           </div>
-          <div class="col-12 my-3">
-            <div>
-              <h5><b>Doctor's diagnosis note:</b></h5>
-            </div>
-            <div>
-              <textarea
-                rows="10"
-                class="form-control w-100"
-                v-model="doctors_diagnosis_note"
-              ></textarea>
-            </div>
-          </div>
           <div
+            v-if="!patient.admission.discharge_date"
             class="col-12 d-flex justify-content-start align-items-center my-3"
           >
             <div>
@@ -304,6 +296,7 @@
             </div>
           </div>
           <div
+            v-if="!patient.admission.discharge_date"
             class="col-12 d-flex justify-content-start align-items-center my-3"
           >
             <div>
@@ -351,8 +344,10 @@
               ></textarea>
             </div>
           </div>
-          <div class="col-12 my-3">
-            <button class="w-100 add_diagnosle">Save</button>
+          <div class="col-12 my-3" v-if="!patient.admission.discharge_date">
+            <button class="w-100 add_diagnosle" @click="update_history()">
+              Save
+            </button>
           </div>
         </div>
       </div>
@@ -378,6 +373,7 @@
 import router from "@/router";
 import { Icon } from "@iconify/vue";
 import DoctorSidebar from "@/components/DoctorDashboard/DoctorSidebar.vue";
+import axios from "axios";
 export default {
   name: "patient-info",
   components: {
@@ -387,39 +383,21 @@ export default {
   data() {
     return {
       patient: {
-        id: 1,
-        patient_id: 1,
-        first_name: "Mohamad",
-        last_name: "Ahmad",
-        dateofbirth: "2-6-2000",
-        gender: "Male",
-        address: "Baramkeh",
-        city: "Damascus",
-        zipcode: "829364628102",
-        country: "Syria",
-        mobile: "0933097404",
-        email: "test@test.com",
-        relationship_status: "Single",
-        old_history: {
-          0: {
-            id: 1,
-            old_disease: "Sukarry",
-            old_medicines: "Ansoline",
-          },
-          1: {
-            id: 2,
-            old_disease: "Blood preasure",
-            old_medicines: "Doa daghat",
-          },
-        },
-        admission: {
-          id: 3,
-          bed_no: 3,
-          ward_no: 1,
-          admission_date: "10-1-2023",
-          discharge_date: "15-1-2023",
-          note: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus aut quibusdam blanditiis, recusandae voluptatum omnis voluptatem eos, ratione ad in deleniti doloremque tenetur, labore dolorum. Ratione temporibus cupiditate repudiandae pariatur.",
-        },
+        id: 0,
+        patient_id: 0,
+        first_name: "",
+        last_name: "",
+        dateofbirth: "",
+        gender: "",
+        address: "",
+        city: "",
+        zipcode: "",
+        country: "",
+        mobile: "",
+        email: "",
+        relationship_status: "",
+        old_history: {},
+        admission: {},
       },
       date: "",
       note: "",
@@ -428,29 +406,62 @@ export default {
       feeling_sick_date: "",
       medicines: "",
       doctors_diagnosis_note: "",
-      followup: "",
+      followup: false,
       follow_up_date: "",
       follow_up_price: "",
       follow_up_note: "",
-      chronic_disease: "",
-      medical_diagnoseles: {
-        0: {
-          id: 1,
-          doctor_note: "Blood hp",
-          date: "15-2-2023",
-          lab_note: "",
-        },
-        1: {
-          id: 2,
-          doctor_note: "Blood preasure",
-          date: "17-2-2023",
-          lab_note: "Test 7",
-        },
-      },
+      chronic_disease: false,
+      medical_diagnoseles: {},
       lab_note: "",
     };
   },
   methods: {
+    getdata() {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      axios
+        .get("http://127.0.0.1:8000/api/data_doctor/" + urlParams.get("id"))
+        .then((response) => {
+          this.patient.id = response.data[0].id;
+          this.patient.patient_id = response.data[0].patient.id;
+          this.patient.first_name = response.data[0].patient.first_name;
+          this.patient.last_name = response.data[0].patient.last_name;
+          this.patient.gender = response.data[0].patient.gender;
+          this.patient.dateofbirth = response.data[0].patient.dob;
+          this.patient.relationship_status =
+            response.data[0].patient.Relationship_Status;
+          this.patient.country = response.data[0].patient.country;
+          this.patient.city = response.data[0].patient.city;
+          this.patient.address = response.data[0].patient.address;
+          this.patient.zipcode = response.data[0].patient.zipcode;
+          this.patient.mobile = response.data[0].patient.mobile;
+          this.patient.email = response.data[0].patient.email;
+          this.patient.admission.admission_date =
+            response.data[0].adms.admission_data;
+          this.patient.admission.discharge_date =
+            response.data[0].adms.discharge_data;
+          this.patient.admission.ward_no = response.data[0].adms.wardd.number;
+          this.patient.admission.bed_no = response.data[0].adms.bedd.number;
+          this.patient.admission.note = response.data[0].adms.note;
+          this.date = response.data[0].date;
+          this.note = response.data[0].note;
+          if (response.data[0].hestory.length > 0) {
+            this.medical_diagnoseles = response.data[0].hestory;
+          }
+          if (response.data[0].old_hestory.length > 0) {
+            this.patient.old_history = response.data[0].old_hestory;
+          }
+          if (response.data[0].dsess) {
+            this.disease = response.data[0].dsess.name;
+            this.feeling_sick_date = response.data[0].dsess.Feeling_sick_date;
+            this.symptoms = response.data[0].dsess.symp;
+            this.medicines = response.data[0].dsess.medicines;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
     show_hide() {
       const element2 = document.getElementById("popup1");
       if (element2.style.visibility == "visible") {
@@ -464,6 +475,64 @@ export default {
     editurl(id) {
       router.push("/Doctor-Edit-Diagnosle?id=" + id);
     },
+    update_history() {
+      if (this.date == "") {
+        alert("Enter date");
+        return;
+      } else if (this.note == "") {
+        alert("Enter doctor note");
+        return;
+      } else if (this.disease == "") {
+        alert("Enter disease name");
+        return;
+      } else if (this.symptoms == "") {
+        alert("Enter symptoms");
+        return;
+      } else if (this.medicines == "") {
+        alert("Enter medicines name");
+        return;
+      } else if (this.followup) {
+        if (this.follow_up_date == "") {
+          alert("Enter followup date");
+          return;
+        } else if (this.follow_up_price == "") {
+          alert("Enter followup price");
+          return;
+        } else if (this.follow_up_note == "") {
+          alert("Enter followup note");
+          return;
+        }
+      }
+      axios("http://127.0.0.1:8000/api/data/" + this.patient.patient_id, {
+        method: "post",
+        data: {
+          patient_history_id: this.patient.id,
+          date: this.date,
+          note: this.note,
+          name: this.disease,
+          symp: this.symptoms,
+          Feeling_sick_date: this.feeling_sick_date,
+          medicines: this.medicines,
+          chronic: this.chronic_disease,
+          old_disease: this.disease,
+          old_medicines: this.medicines,
+          follow: this.followup,
+          follow_date: this.follow_up_date,
+          follow_note: this.follow_up_note,
+          total_price: this.follow_up_price,
+        },
+      })
+        .then((response) => {
+          alert("Patient have " + response.data.name);
+          router.push("/Doctor-Patients");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+  mounted() {
+    this.getdata();
   },
 };
 </script>

@@ -54,7 +54,9 @@
                     <th
                       scope="col"
                       v-if="
-                        page_name == 'Doctors' || page_name == 'Labrotaries'
+                        page_name == 'Doctors' ||
+                        page_name == 'Labrotaries' ||
+                        page_name == 'Laprotary Specialists'
                       "
                     >
                       Department
@@ -83,7 +85,9 @@
                     </td>
                     <td
                       v-if="
-                        page_name == 'Doctors' && page_name != 'Labrotaries'
+                        (page_name == 'Doctors' &&
+                          page_name != 'Labrotaries') ||
+                        page_name == 'Laprotary Specialists'
                       "
                     >
                       {{ element.department }}
@@ -221,9 +225,9 @@ export default {
   },
   props: {
     page_name: String,
-    data_array: Object,
     add_url: String,
     edit_url: String,
+    data_array: Object,
   },
   methods: {
     searchdata() {
@@ -263,8 +267,9 @@ export default {
           } else if (this.page_name == "Wards") {
             if (Object.keys(this.data_array).length > 0) {
               for (i = 0; i < Object.keys(this.data_array).length; i++) {
-                let number = this.data_array[i].number;
-                if (number == this.searchbar) {
+                let number = this.data_array[i].number.toLowerCase();
+                let result = number.search(this.searchbar.toLowerCase());
+                if (!result) {
                   this.shown_data[i] = this.data_array[i];
                 }
               }

@@ -67,12 +67,13 @@
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
                     <th scope="col">Doctor name</th>
-                    <th scope="col">Ward no.</th>
-                    <th scope="col">Bed no.</th>
+                    <th scope="col" v-if="data_type != null">Ward no.</th>
+                    <th scope="col" v-if="data_type != null">Bed no.</th>
                     <th scope="col">
                       {{ data_type == null ? "Discharge" : "Admission" }} date
                     </th>
-                    <th scope="col">Edit</th>
+                    <th scope="col" v-if="data_type == null">Total cost</th>
+                    <th scope="col" v-if="data_type != null">Edit</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -82,15 +83,18 @@
                       {{ element.first_name + " " + element.last_name }}
                     </td>
                     <td scope="row">{{ element.doctor_name }}</td>
-                    <td>{{ element.ward_no }}</td>
-                    <td>{{ element.bed_no }}</td>
+                    <td v-if="data_type != null">{{ element.ward_no }}</td>
+                    <td v-if="data_type != null">{{ element.bed_no }}</td>
                     <td v-if="data_type != null">
                       {{ element.admission_date }}
                     </td>
                     <td v-if="data_type == null">
                       {{ element.discharge_date }}
                     </td>
-                    <td>
+                    <td v-if="data_type == null">
+                      {{ element.total_cost }}
+                    </td>
+                    <td v-if="data_type != null">
                       <button
                         type="button"
                         class="edit"
@@ -114,6 +118,7 @@
 import router from "@/router";
 import SecretarySidebarVue from "@/components/SecretaryDashboard/SecretarySidebar.vue";
 import { Icon } from "@iconify/vue";
+import axios from "axios";
 export default {
   name: "patients-admissions",
   data() {
@@ -122,48 +127,7 @@ export default {
       a_num: 0,
       searchbar: "",
       data_type: "active",
-      data_array: {
-        0: {
-          id: 1,
-          doctor_name: "Ahmad Alahmad",
-          first_name: "mode",
-          last_name: "mmm",
-          ward_no: 4,
-          bed_no: 3,
-          admission_date: "20-1-1999",
-          discharge_date: "20-1-1999",
-        },
-        1: {
-          id: 2,
-          doctor_name: "Ahmad Alahmad",
-          first_name: "mode",
-          last_name: "kasem",
-          ward_no: 5,
-          bed_no: 3,
-          admission_date: "20-1-1999",
-          discharge_date: null,
-        },
-        2: {
-          id: 3,
-          doctor_name: "Ahmad Alahmad",
-          first_name: "Mohamad",
-          last_name: "samer",
-          ward_no: 5,
-          bed_no: 3,
-          admission_date: "20-1-1999",
-          discharge_date: null,
-        },
-        3: {
-          id: 4,
-          doctor_name: "Ahmad Alahmad",
-          first_name: "Ali",
-          last_name: "abd",
-          ward_no: 5,
-          bed_no: 3,
-          admission_date: "20-1-1999",
-          discharge_date: "20-2-2013",
-        },
-      },
+      data_array: {},
     };
   },
   components: {
@@ -235,9 +199,37 @@ export default {
     editurl(id) {
       router.push("/Secretary-Edit-Admission?id=" + id);
     },
+    getdata() {
+      axios
+        .get("http://127.0.0.1:8000/api/get_admissions")
+        .then((response) => {
+          if (response.data.length > 0) {
+            for (var i = 0; i < response.data.length; i++) {
+              this.data_array[i] = {
+                id: response.data[i].patient_admn_id,
+                doctor_name:
+                  response.data[i].doctor.user.first_name +
+                  " " +
+                  response.data[i].doctor.user.last_name,
+                first_name: response.data[i].patient.first_name,
+                last_name: response.data[i].patient.last_name,
+                ward_no: response.data[i].adms.wardd.number,
+                bed_no: response.data[i].adms.bedd.number,
+                admission_date: response.data[i].adms.admission_data,
+                discharge_date: response.data[i].adms.discharge_data,
+                total_cost: response.data[i].adms.total_cost,
+              };
+            }
+          }
+          this.searchdata();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
   mounted() {
-    this.searchdata();
+    this.getdata();
   },
 };
 </script>

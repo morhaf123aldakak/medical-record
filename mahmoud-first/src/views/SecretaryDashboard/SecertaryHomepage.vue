@@ -27,6 +27,7 @@
 import SecretarySidebar from "@/components/SecretaryDashboard/SecretarySidebar.vue";
 import { Icon } from "@iconify/vue";
 import router from "@/router";
+import axios from "axios";
 export default {
   name: "secretary-homepage",
   data() {
@@ -35,19 +36,19 @@ export default {
         0: {
           name: "Patients",
           icon: "mdi:patient-outline",
-          count: 5,
+          count: 0,
           url: "/Secretary-Patients",
         },
         1: {
           name: "Wards",
           icon: "material-symbols:meeting-room",
-          count: 2,
+          count: 0,
           url: "/Secretary-Rooms",
         },
         2: {
           name: "Admissions",
           icon: "material-symbols:other-admission-outline",
-          count: 2,
+          count: 0,
           url: "/Secretary-Admission-Patient",
         },
       },
@@ -61,6 +62,21 @@ export default {
     gotourl(url) {
       router.push(url);
     },
+    getdata() {
+      axios
+        .get("http://127.0.0.1:8000/api/numbers_patient_ward_admn")
+        .then((response) => {
+          this.cards[0].count = response.data[1];
+          this.cards[1].count = response.data[2];
+          this.cards[2].count = response.data[0];
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+  mounted() {
+    this.getdata();
   },
 };
 </script>

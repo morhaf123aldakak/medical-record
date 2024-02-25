@@ -27,6 +27,7 @@
 import DoctorSidebar from "@/components/DoctorDashboard/DoctorSidebar.vue";
 import router from "@/router";
 import { Icon } from "@iconify/vue";
+import axios from "axios";
 export default {
   name: "doctor-homepage",
   data() {
@@ -35,7 +36,7 @@ export default {
         0: {
           name: "Patients",
           icon: "mdi:patient",
-          count: 5,
+          count: 0,
           url: "/Doctor-Patients",
         },
       },
@@ -49,6 +50,22 @@ export default {
     gotourl(url) {
       router.push(url);
     },
+    getdata() {
+      const Token = window.localStorage.getItem("token");
+      axios("http://127.0.0.1:8000/api/nember_patient", {
+        method: "get",
+        headers: { Authorization: `Bearer ${Token}` },
+      })
+        .then((response) => {
+          this.cards[0].count = response.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+  mounted() {
+    this.getdata();
   },
 };
 </script>

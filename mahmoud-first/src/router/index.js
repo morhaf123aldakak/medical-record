@@ -39,7 +39,7 @@ import SpecialistHomepageVue from "@/views/LabSpecialistDashboard/SpecialistHome
 // Lap Specialsts Views
 import DiagnoslesViewVue from "@/views/LabSpecialistDashboard/Diagnosles/DiagnoslesView.vue";
 // Lap Specialest Edit
-import EditDiagnosleVue from "@/views/LabSpecialistDashboard/Diagnosles/EditDiagnosle.vue";
+import SpecialestdiagnoslesViewVue from "@/views/LabSpecialistDashboard/Diagnosles/SpecialestdiagnoslesView.vue";
 // Doctor
 import DoctorHomepageVue from "@/views/DoctorDashboard/DoctorHomepage.vue";
 // Doctor Views
@@ -211,8 +211,8 @@ const routes = [
   // Lap Specialist Edit
   {
     path: "/Specialist-Edit-Diagnosel",
-    name: "EditDiagnosle",
-    component: EditDiagnosleVue,
+    name: "SpecialestdiagnoslesViewVue",
+    component: SpecialestdiagnoslesViewVue,
   },
   // Doctor
   {

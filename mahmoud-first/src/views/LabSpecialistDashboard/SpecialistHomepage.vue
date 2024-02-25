@@ -27,6 +27,7 @@
 import SepcialistSidebar from "@/components/LapSpecialistDashboard/SpecialistSidebar.vue";
 import { Icon } from "@iconify/vue";
 import router from "@/router";
+import axios from "axios";
 export default {
   name: "specialist-homepage",
   data() {
@@ -35,7 +36,7 @@ export default {
         0: {
           name: "Diagnosles",
           icon: "streamline:checkup-medical-report-clipboard",
-          count: 5,
+          count: 0,
           url: "/Specialist-Diagnosles",
         },
       },
@@ -49,6 +50,19 @@ export default {
     gotourl(url) {
       router.push(url);
     },
+    getdata() {
+      axios
+        .get("http://127.0.0.1:8000/api/number_diagnols")
+        .then((response) => {
+          this.cards[0].count = response.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+  mounted() {
+    this.getdata();
   },
 };
 </script>

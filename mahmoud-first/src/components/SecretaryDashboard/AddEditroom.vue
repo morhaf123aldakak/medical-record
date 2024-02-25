@@ -161,6 +161,7 @@
             type="button"
             class="submit_btn"
             style="background-color: rgb(74, 226, 146)"
+            @click="type == 'Add' ? addward() : editward()"
           >
             {{ type + " ward" }}
           </button>
@@ -171,15 +172,17 @@
 </template>
 
 <script>
+import axios from "axios";
 import SecretarySidebar from "./SecretarySidebar.vue";
 import { Icon } from "@iconify/vue";
+import router from "@/router";
 export default {
   name: "add-editroom",
   data() {
     return {
-      number: 0,
+      number: "",
       status: "",
-      bed_number: 0,
+      bed_number: "",
       bed_status: "",
       beds: [],
       err_messgae: "",
@@ -196,14 +199,6 @@ export default {
   methods: {
     addbed() {
       this.err_messgae = "";
-      if (this.beds.length > 0) {
-        for (var i = 0; i < this.beds.length; i++) {
-          if (this.beds[i].number == this.bed_number) {
-            this.err_messgae = "This number is already taken";
-            return;
-          }
-        }
-      }
       if (this.bed_number == 0) {
         this.err_messgae = "You should enter number";
         return;
@@ -212,27 +207,127 @@ export default {
         this.err_messgae = "You should fill the status";
         return;
       }
-      this.id++;
-      this.beds.push({
-        id: this.id,
-        number: this.bed_number,
-        status: this.bed_status,
-      });
+      if (this.beds.length > 0) {
+        for (var i = 0; i < this.beds.length; i++) {
+          if (this.beds[i].number == this.bed_number) {
+            this.err_messgae = "This number is already taken";
+            return;
+          }
+        }
+      }
+      if (this.type == "Add") {
+        this.id++;
+        this.beds.push({
+          id: this.id,
+          number: this.bed_number,
+          status: this.bed_status,
+        });
+      } else {
+        axios("http://127.0.0.1:8000/api/add_bed", {
+          method: "post",
+          data: {
+            ward_id: this.id,
+            status: this.bed_status,
+            number: this.bed_number,
+          },
+        })
+          .then((response) => {
+            alert(response.data.number + " has been addded sucsessfully");
+            window.location.reload();
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
     },
     deletebed(index) {
-      var i = index;
-      if (Object.keys(this.beds).length == 1) {
+      if (this.type == "Add") {
+        var i = index;
+        if (Object.keys(this.beds).length == 1) {
+          this.beds.splice(i, 1);
+          this.id--;
+          return;
+        }
+        for (i; i < Object.keys(this.beds).length - 1; i++) {
+          this.beds[i] = this.beds[i + 1];
+          this.beds[i].id = i + 1;
+        }
         this.beds.splice(i, 1);
         this.id--;
+      } else {
+        axios
+          .get("http://127.0.0.1:8000/api/delete_bed/" + this.beds[index].id)
+          .then((response) => {
+            alert(response.data);
+            window.location.reload();
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+    },
+    addward() {
+      if (this.number == "") {
+        alert("Enter ward number");
+        return;
+      } else if (this.status == "") {
+        alert("Enter status");
+        return;
+      } else if (this.beds.length <= 0) {
+        alert("Enter at least 1 bed");
         return;
       }
-      for (i; i < Object.keys(this.beds).length - 1; i++) {
-        this.beds[i] = this.beds[i + 1];
-        this.beds[i].id = i + 1;
-      }
-      this.beds.splice(i, 1);
-      this.id--;
+      axios("http://127.0.0.1:8000/api/ward_store", {
+        method: "post",
+        data: {
+          number: this.number,
+          status: this.status,
+          bed: this.beds,
+        },
+      })
+        .then((response) => {
+          alert(response.data.number + " has been added sucsessfully");
+          router.push("/Secretary-Rooms");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
+    editward() {
+      axios("http://127.0.0.1:8000/api/update_ward/" + this.id, {
+        method: "post",
+        data: { ward_number: this.number, ward_status: this.status },
+      })
+        .then((response) => {
+          alert(response.data.number + " has been updated sucsessfully");
+          router.push("/Secretary-Rooms");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    getdata() {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      axios
+        .get("http://127.0.0.1:8000/api/show_one_ward/" + urlParams.get("id"))
+        .then((response) => {
+          this.id = response.data.id;
+          this.number = response.data.number;
+          this.status = response.data.status;
+          if (response.data.bed) {
+            this.beds = response.data.bed;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+  mounted() {
+    if (this.type == "Edit") {
+      this.getdata();
+    }
   },
 };
 </script>

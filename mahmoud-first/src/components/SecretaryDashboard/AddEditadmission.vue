@@ -12,12 +12,12 @@
         </div>
         <div class="col-6 text-center" v-if="type == 'Edit'">
           <h5>
-            {{ "Patient name: " + p_fname + " " + p_lname }}
+            {{ "Patient name: " + p_first_name + " " + p_last_name }}
           </h5>
         </div>
         <div class="col-6 text-center" v-if="type == 'Edit'">
           <h5>
-            {{ "Doctor name: " + d_fname + " " + d_lname }}
+            {{ "Doctor name: " + d_first_name + " " + d_last_name }}
           </h5>
         </div>
         <div class="col-6 text-center my-4" v-if="type == 'Edit'">
@@ -40,17 +40,6 @@
           <div class="text-start">Total cost</div>
           <div>
             <input type="number" class="form-control" v-model="totalcost" />
-          </div>
-        </div>
-        <div class="col-12" v-if="type == 'Edit'">
-          <div class="text-start">Notes</div>
-          <div>
-            <textarea
-              class="form-control"
-              rows="10"
-              v-model="notes"
-              style="width: 100%"
-            ></textarea>
           </div>
         </div>
         <div class="col-6" v-if="type == 'Add'">
@@ -83,8 +72,7 @@
                       console.log(ward_index);
                     "
                     :style="{
-                      color:
-                        element.number == ward_number ? '#e57c23' : 'black',
+                      color: element.id == ward_id ? '#e57c23' : 'black',
                     }"
                     >{{ element.number }}</a
                   >
@@ -110,7 +98,7 @@
                 class="dropdown-menu drop-scroller"
                 aria-labelledby="dropdownMenuButton1"
               >
-                <li v-for="element in wards[ward_index].beds" :key="element.id">
+                <li v-for="element in wards[ward_index].bed" :key="element.id">
                   <a
                     class="dropdown-item"
                     href="#"
@@ -119,7 +107,7 @@
                       bed_number = element.number;
                     "
                     :style="{
-                      color: element.number == bed_number ? '#e57c23' : 'black',
+                      color: element.id == bed_id ? '#e57c23' : 'black',
                     }"
                     >{{ element.number }}</a
                   >
@@ -182,7 +170,7 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                {{ p_fname + " " + p_lname }}
+                {{ p_first_name + " " + p_last_name }}
               </button>
               <ul
                 class="dropdown-menu drop-scroller"
@@ -193,15 +181,19 @@
                     class="dropdown-item"
                     href="#"
                     @click="
-                      p_fname = element.fname;
-                      p_lname = element.lname;
+                      p_first_name = element.first_name;
+                      p_last_name = element.last_name;
                       p_id = element.id;
                     "
                     :style="{
-                      color: element.fname == p_fname ? '#e57c23' : 'black',
+                      color: element.id == p_id ? '#e57c23' : 'black',
                     }"
                     >{{
-                      element.fname + " " + element.lname + " " + element.mobile
+                      element.first_name +
+                      " " +
+                      element.last_name +
+                      ", mobile: " +
+                      element.mobile
                     }}</a
                   >
                 </li>
@@ -220,7 +212,7 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                {{ d_fname + " " + d_lname }}
+                {{ d_first_name + " " + d_last_name }}
               </button>
               <ul
                 class="dropdown-menu drop-scroller"
@@ -231,14 +223,23 @@
                     class="dropdown-item"
                     href="#"
                     @click="
-                      d_fname = element.fname;
-                      d_lname = element.lname;
+                      d_first_name = element.first_name;
+                      d_last_name = element.last_name;
                       d_id = element.id;
                     "
                     :style="{
-                      color: element.fname == d_fname ? '#e57c23' : 'black',
+                      color:
+                        element.first_name == d_first_name
+                          ? '#e57c23'
+                          : 'black',
                     }"
-                    >{{ element.fname + " " + element.lname }}</a
+                    >{{
+                      element.first_name +
+                      " " +
+                      element.last_name +
+                      ", department: " +
+                      element.dep.name
+                    }}</a
                   >
                 </li>
               </ul>
@@ -252,10 +253,22 @@
           </div>
         </div>
         <div class="col-12">
+          <div class="text-start">Notes</div>
+          <div>
+            <textarea
+              class="form-control"
+              rows="10"
+              v-model="notes"
+              style="width: 100%"
+            ></textarea>
+          </div>
+        </div>
+        <div class="col-12">
           <button
             type="button"
             class="submit_btn"
             style="background-color: rgb(74, 226, 146)"
+            @click="type == 'Add' ? add_addmission() : edit_addmission()"
           >
             {{ type + " admission" }}
           </button>
@@ -266,18 +279,20 @@
 </template>
 
 <script>
+import axios from "axios";
 import SecretarySidebar from "./SecretarySidebar.vue";
+import router from "@/router";
 export default {
   name: "add-editadmission",
   data() {
     return {
       patient_search: "",
       doctor_search: "",
-      p_fname: "",
-      p_lname: "",
+      p_first_name: "",
+      p_last_name: "",
       p_id: "",
-      d_fname: "",
-      d_lname: "",
+      d_first_name: "",
+      d_last_name: "",
       d_id: "",
       admission_date: "",
       discharge_date: "",
@@ -290,81 +305,10 @@ export default {
       ward_index: "notused",
       bed_id: 0,
       bed_number: 0,
-      patients: {
-        0: {
-          id: 1,
-          fname: "mohamad",
-          lname: "hegazy",
-          mobile: "0933097404",
-        },
-        1: {
-          id: 2,
-          fname: "Hythm",
-          lname: "Hana",
-          mobile: "0933097405",
-        },
-        2: {
-          id: 3,
-          fname: "Mahmoud",
-          lname: "Alamle",
-          mobile: "0933097406",
-        },
-      },
-      doctors: {
-        0: {
-          id: 1,
-          fname: "mohamad",
-          lname: "hegazy",
-        },
-        1: {
-          id: 2,
-          fname: "Hythm",
-          lname: "Hana",
-        },
-        2: {
-          id: 3,
-          fname: "Mahmoud",
-          lname: "Alamle",
-        },
-      },
-      wards: {
-        0: {
-          id: 1,
-          number: 2,
-          beds: {
-            0: {
-              id: 1,
-              number: 2,
-            },
-            1: {
-              id: 2,
-              number: 4,
-            },
-            2: {
-              id: 3,
-              number: 6,
-            },
-          },
-        },
-        1: {
-          id: 2,
-          number: 5,
-          beds: {
-            0: {
-              id: 4,
-              number: 7,
-            },
-            1: {
-              id: 5,
-              number: 9,
-            },
-            2: {
-              id: 6,
-              number: 12,
-            },
-          },
-        },
-      },
+      patients: {},
+      doctors: {},
+      wards: {},
+      id: 0,
     };
   },
   methods: {
@@ -376,9 +320,9 @@ export default {
         if (Object.keys(this.patients).length > 0)
           for (var i = 0; i < Object.keys(this.patients).length; i++) {
             let name =
-              this.patients[i].fname.toLowerCase() +
+              this.patients[i].first_name.toLowerCase() +
               " " +
-              this.patients[i].lname.toLowerCase();
+              this.patients[i].last_name.toLowerCase();
             let result = name.search(this.patient_search.toLowerCase());
             if (!result) {
               this.p_shown_data[i] = this.patients[i];
@@ -397,9 +341,9 @@ export default {
         if (Object.keys(this.doctors).length > 0)
           for (var i = 0; i < Object.keys(this.doctors).length; i++) {
             let name =
-              this.doctors[i].fname.toLowerCase() +
+              this.doctors[i].first_name.toLowerCase() +
               " " +
-              this.doctors[i].lname.toLowerCase();
+              this.doctors[i].last_name.toLowerCase();
             let result = name.search(this.doctor_search.toLowerCase());
             if (!result) {
               this.d_shown_data[i] = this.doctors[i];
@@ -410,6 +354,138 @@ export default {
           }
       }
     },
+    getdata() {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      this.id = urlParams.get("id");
+      axios
+        .get("http://127.0.0.1:8000/api/bed_index")
+        .then((response) => {
+          this.wards = response.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      axios
+        .get("http://127.0.0.1:8000/api/get_all_patient")
+        .then((response) => {
+          this.patients = response.data;
+          this.searchpatient();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      axios
+        .get("http://127.0.0.1:8000/api/get-all-doctor")
+        .then((response) => {
+          var index = 0;
+          var data = response.data;
+          for (var i = 0; i < data.length; i++) {
+            if (data[i].type == "doctor") {
+              this.doctors[index] = {
+                id: data[i].doctor.id,
+                first_name: data[i].first_name,
+                last_name: data[i].last_name,
+                dep: data[i].dep,
+              };
+              index++;
+            }
+          }
+          this.searchdoctor();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      if (this.type == "Edit") {
+        axios
+          .get("http://127.0.0.1:8000/api/show_one_admission/" + this.id)
+          .then((response) => {
+            console.log(response);
+            this.p_first_name = response.data[0].patient.first_name;
+            this.p_last_name = response.data[0].patient.last_name;
+            this.d_first_name = response.data[0].doctor.user.first_name;
+            this.d_last_name = response.data[0].doctor.user.last_name;
+            this.bed_number = response.data[0].adms.bedd.number;
+            this.ward_number = response.data[0].adms.wardd.number;
+            this.notes = response.data[0].adms.note;
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+    },
+    add_addmission() {
+      if (this.ward_id == 0) {
+        alert("Choose ward");
+        return;
+      } else if (this.bed_id == 0) {
+        alert("Choose bed");
+        return;
+      } else if (this.p_id == "") {
+        alert("Choose patient");
+        return;
+      } else if (this.d_id == "") {
+        alert("Choose doctor");
+        return;
+      } else if (this.admission_date == "") {
+        alert("Enter admission date");
+        return;
+      } else if (this.notes == "") {
+        alert("Enter notes");
+        return;
+      }
+      axios("http://127.0.0.1:8000/api/add_admission", {
+        method: "post",
+        data: {
+          admission_data: this.admission_date,
+          bed_id: this.bed_id,
+          ward_id: this.ward_id,
+          note: this.notes,
+          patient_id: this.p_id,
+          doctor_id: this.d_id,
+        },
+      })
+        .then((response) => {
+          alert(
+            "Admission has been addded sucsessfully at: " +
+              response.data[0].admission_data
+          );
+          router.push("/Secretary-Admission-Patient");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    edit_addmission() {
+      if (this.discharge_date == "") {
+        alert("Enter discharge date");
+        return;
+      } else if (this.totalcost == 0) {
+        alert("Enter total cost");
+        return;
+      } else if (this.notes == "") {
+        alert("Enter notes");
+        return;
+      }
+      axios("http://127.0.0.1:8000/api/update_admission/" + this.id, {
+        method: "post",
+        data: {
+          note: this.notes,
+          total_cost: this.totalcost,
+          discharge_data: this.discharge_date,
+        },
+      })
+        .then((response) => {
+          alert(
+            "Patient has discharged sucsessfully at: " +
+              response.data.discharge_data
+          );
+          router.push("/Secretary-Admission-Patient");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
   components: {
     SecretarySidebar,
@@ -418,8 +494,7 @@ export default {
     type: String,
   },
   mounted() {
-    this.searchpatient();
-    this.searchdoctor();
+    this.getdata();
   },
 };
 </script>

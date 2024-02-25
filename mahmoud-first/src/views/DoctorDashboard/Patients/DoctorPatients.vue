@@ -124,6 +124,7 @@
 import DoctorSidebar from "@/components/DoctorDashboard/DoctorSidebar.vue";
 import { Icon } from "@iconify/vue";
 import router from "@/router";
+import axios from "axios";
 export default {
   name: "doctor-patients",
   components: {
@@ -137,48 +138,7 @@ export default {
       data_type: "active",
       d_num: 0,
       doctor_note: "",
-      data_array: {
-        0: {
-          id: 1,
-          ward_no: 3,
-          patient_id: 1,
-          first_name: "mode",
-          last_name: "mmm",
-          bed_no: 2,
-          date: "20-2-2023",
-          note: "Test 1",
-        },
-        1: {
-          id: 2,
-          ward_no: 3,
-          patient_id: 2,
-          first_name: "mode",
-          last_name: "kasem",
-          bed_no: 2,
-          date: "20-2-2023",
-          note: "Test 2",
-        },
-        2: {
-          id: 3,
-          ward_no: 3,
-          patient_id: 3,
-          first_name: "Mohamad",
-          last_name: "samer",
-          bed_no: 2,
-          date: null,
-          note: null,
-        },
-        3: {
-          id: 4,
-          ward_no: 3,
-          patient_id: 4,
-          first_name: "Ali",
-          last_name: "abd",
-          bed_no: 2,
-          date: null,
-          note: null,
-        },
-      },
+      data_array: {},
     };
   },
   methods: {
@@ -190,12 +150,15 @@ export default {
       if (this.searchbar == "") {
         if (Object.keys(this.data_array).length > 0)
           for (var i = 0; i < Object.keys(this.data_array).length; i++) {
-            if (this.data_type != null && this.data_array[i].date == null) {
+            if (
+              this.data_type != null &&
+              this.data_array[i].discharge_date == null
+            ) {
               this.shown_data[i] = this.data_array[i];
               this.d_num++;
             } else if (
               this.data_type == null &&
-              this.data_array[i].date != null
+              this.data_array[i].discharge_date != null
             ) {
               this.shown_data[i] = this.data_array[i];
             }
@@ -209,21 +172,27 @@ export default {
               this.data_array[i].last_name.toLowerCase();
             let result = name.search(this.searchbar.toLowerCase());
             if (!result) {
-              if (this.data_type != null && this.data_array[i].date == null) {
+              if (
+                this.data_type != null &&
+                this.data_array[i].discharge_date == null
+              ) {
                 this.shown_data[i] = this.data_array[i];
               } else if (
                 this.data_type == null &&
-                this.data_array[i].date != null
+                this.data_array[i].discharge_date != null
               ) {
                 this.shown_data[i] = this.data_array[i];
               }
             }
             if (result && name[result - 1] == " ") {
-              if (this.data_type != null && this.data_array[i].date == null) {
+              if (
+                this.data_type != null &&
+                this.data_array[i].discharge_date == null
+              ) {
                 this.shown_data[i] = this.data_array[i];
               } else if (
                 this.data_type == null &&
-                this.data_array[i].date != null
+                this.data_array[i].discharge_date != null
               ) {
                 this.shown_data[i] = this.data_array[i];
               }
@@ -244,9 +213,36 @@ export default {
         element2.style.opacity = 1;
       }
     },
+    getdata() {
+      const Token = window.localStorage.getItem("token");
+      axios("http://127.0.0.1:8000/api/get_all_hestory", {
+        method: "get",
+        headers: { Authorization: `Bearer ${Token}` },
+      })
+        .then((response) => {
+          for (var i = 0; i < response.data.length; i++) {
+            this.data_array[i] = {
+              id: response.data[i].id,
+              ward_no: response.data[i].adms.wardd.number,
+              patient_id: response.data[i].patient_id,
+              first_name: response.data[i].patient.first_name,
+              last_name: response.data[i].patient.last_name,
+              bed_no: response.data[i].adms.bedd.number,
+              date: response.data[i].date,
+              note: response.data[i].note,
+              admission_date: response.data[i].adms.admission_datam,
+              discharge_date: response.data[i].adms.discharge_data,
+            };
+          }
+          this.searchdata();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
   mounted() {
-    this.searchdata();
+    this.getdata();
   },
 };
 </script>

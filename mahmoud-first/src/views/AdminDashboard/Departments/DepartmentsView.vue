@@ -11,50 +11,39 @@
 
 <script>
 import TableComponent from "@/components/DashboardAll/TableComponent.vue";
+import axios from "axios";
 export default {
   name: "departments-view",
   data() {
     return {
-      data_array: {
-        0: {
-          id: 1,
-          name: "Eye",
-          phone: "+963933097404",
-          email: "test@test.com",
-        },
-        1: {
-          id: 2,
-          name: "Teeth",
-          phone: "+963933097404",
-          email: "test@test.com",
-          department: "Eye",
-        },
-        2: {
-          id: 3,
-          name: "Kidnees",
-          phone: "+963933097404",
-          email: "test@test.com",
-          department: "Eye",
-        },
-        3: {
-          id: 4,
-          name: "Laungs",
-          phone: "+963933097404",
-          email: "test@test.com",
-          department: "Eye",
-        },
-        4: {
-          id: 5,
-          name: "Ear",
-          phone: "+963933097404",
-          email: "test@test.com",
-          department: "Eye",
-        },
-      },
+      data_array: {},
     };
   },
   components: {
     TableComponent,
+  },
+  methods: {
+    getdata() {
+      axios
+        .get("http://127.0.0.1:8000/api/dept-index")
+        .then((response) => {
+          var data = response.data;
+          for (var i = 0; i < data.length; i++) {
+            this.data_array[i] = {
+              id: data[i].id,
+              name: data[i].name,
+              phone: data[i].phone,
+              email: data[i].email,
+            };
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+  mounted() {
+    this.getdata();
   },
 };
 </script>

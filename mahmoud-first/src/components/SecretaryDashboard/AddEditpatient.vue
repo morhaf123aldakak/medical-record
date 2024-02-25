@@ -65,12 +65,6 @@
           </div>
         </div>
         <div class="col-6">
-          <div class="text-start">Phone</div>
-          <div>
-            <input type="text" class="form-control" v-model="phone" />
-          </div>
-        </div>
-        <div class="col-6">
           <div class="text-start">Mobile</div>
           <div>
             <input type="text" class="form-control" v-model="mobile" />
@@ -106,7 +100,7 @@
             <input type="text" class="form-control" v-model="zipcode" />
           </div>
         </div>
-        <div class="col-6">
+        <div class="col-12">
           <div class="text-start">Relationship status</div>
           <div>
             <div class="dropdown">
@@ -222,6 +216,7 @@
             type="button"
             class="submit_btn"
             style="background-color: rgb(74, 226, 146)"
+            @click="type == 'Add' ? add_patient() : edit_patient()"
           >
             {{ type + " patient" }}
           </button>
@@ -232,7 +227,9 @@
 </template>
 <script>
 import SecretarySidebar from "@/components/SecretaryDashboard/SecretarySidebar.vue";
-
+import router from "@/router";
+import axios from "axios";
+import { Icon } from "@iconify/vue";
 export default {
   name: "add-editpatient",
   data() {
@@ -257,6 +254,7 @@ export default {
   },
   components: {
     SecretarySidebar,
+    Icon,
   },
   props: {
     type: String,
@@ -264,14 +262,6 @@ export default {
   methods: {
     addoldhistory() {
       this.err_messgae = "";
-      if (this.old_history.length > 0) {
-        for (var i = 0; i < this.old_history.length; i++) {
-          if (this.old_history[i].old_disease == this.disease_name) {
-            this.err_messgae = "This disease has been inserted";
-            return;
-          }
-        }
-      }
       if (this.disease_name == "") {
         this.err_messgae = "You should enter disease name";
         return;
@@ -280,27 +270,194 @@ export default {
         this.err_messgae = "You should enter medicins";
         return;
       }
-      this.id++;
-      this.old_history.push({
-        id: this.id,
-        old_disease: this.disease_name,
-        old_medicines: this.medicines,
-      });
+      if (this.old_history.length > 0) {
+        for (var i = 0; i < this.old_history.length; i++) {
+          if (this.old_history[i].old_disease == this.disease_name) {
+            this.err_messgae = "This disease has been inserted";
+            return;
+          }
+        }
+      }
+      if (this.type == "Add") {
+        this.id++;
+        this.old_history.push({
+          id: this.id,
+          old_disease: this.disease_name,
+          old_medicines: this.medicines,
+        });
+      } else {
+        axios("http://127.0.0.1:8000/api/add_Patient_Old_History", {
+          method: "post",
+          data: {
+            patient_id: this.id,
+            old_medicines: this.medicines,
+            old_disease: this.disease_name,
+          },
+        })
+          .then((response) => {
+            alert(response.data.old_disease + " has been added sucsessfully");
+            window.location.reload();
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
     },
     deleteoldhistory(index) {
-      var i = index;
-      if (Object.keys(this.old_history).length == 1) {
+      if (this.type == "Add") {
+        var i = index;
+        if (Object.keys(this.old_history).length == 1) {
+          this.old_history.splice(i, 1);
+          this.id--;
+          return;
+        }
+        for (i; i < Object.keys(this.old_history).length - 1; i++) {
+          this.old_history[i] = this.old_history[i + 1];
+          this.old_history[i].id = i + 1;
+        }
         this.old_history.splice(i, 1);
         this.id--;
+      } else {
+        axios
+          .get(
+            "http://127.0.0.1:8000/api/delete_old/" + this.old_history[index].id
+          )
+          .then((response) => {
+            alert(response.data);
+            window.location.reload();
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+    },
+    add_patient() {
+      if (this.first_name == "") {
+        alert("Enter first name");
+        return;
+      } else if (this.last_name == "") {
+        alert("Enter last name");
+        return;
+      } else if (this.email == "") {
+        alert("Enter email");
+        return;
+      } else if (this.city == "") {
+        alert("Enter city");
+        return;
+      } else if (this.address == "") {
+        alert("Enter address");
+        return;
+      } else if (this.date_of_birth == "") {
+        alert("Enter date of birth");
+        return;
+      } else if (this.gender == "") {
+        alert("Enter gender");
+        return;
+      } else if (this.mobile == "") {
+        alert("Enter mobile");
+        return;
+      } else if (this.zipcode == "") {
+        alert("Enter zipcode");
+        return;
+      } else if (this.country == "") {
+        alert("Enter country");
+        return;
+      } else if (this.relation_state == "") {
+        alert("Enter relationship state");
         return;
       }
-      for (i; i < Object.keys(this.old_history).length - 1; i++) {
-        this.old_history[i] = this.old_history[i + 1];
-        this.old_history[i].id = i + 1;
+      const formdata = new FormData();
+      formdata.append("first_name", this.first_name);
+      formdata.append("last_name", this.last_name);
+      formdata.append("email", this.email);
+      formdata.append("city", this.city);
+      formdata.append("dob", this.date_of_birth);
+      formdata.append("gender", this.gender);
+      formdata.append("address", this.address);
+      formdata.append("mobile", parseInt(this.mobile));
+      formdata.append("zipcode", this.zipcode);
+      formdata.append("country", this.country);
+      formdata.append("Relationship_Status", this.relation_state);
+      if (this.old_history.length > 0) {
+        formdata.append("old", JSON.stringify(this.old_history));
       }
-      this.old_history.splice(i, 1);
-      this.id--;
+      axios
+        .post("http://127.0.0.1:8000/api/add_patient", formdata)
+        .then((response) => {
+          alert(
+            response.data[0].first_name +
+              " " +
+              response.data[0].last_name +
+              " has been added sucsessfully"
+          );
+          router.push("/Secretary-Patients");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
+    edit_patient() {
+      const formdata = new FormData();
+      formdata.append("first_name", this.first_name);
+      formdata.append("last_name", this.last_name);
+      formdata.append("email", this.email);
+      formdata.append("city", this.city);
+      formdata.append("dob", this.date_of_birth);
+      formdata.append("gender", this.gender);
+      formdata.append("address", this.address);
+      formdata.append("mobile", parseInt(this.mobile));
+      formdata.append("zipcode", this.zipcode);
+      formdata.append("country", this.country);
+      formdata.append("Relationship_Status", this.relation_state);
+
+      axios
+        .post("http://127.0.0.1:8000/api/update_patient/" + this.id, formdata)
+        .then((response) => {
+          alert(
+            response.data.first_name +
+              " " +
+              response.data.last_name +
+              " has been updated sucsessfully"
+          );
+          router.push("/Secretary-Patients");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    getdata() {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      axios
+        .get(
+          "http://127.0.0.1:8000/api/show_one_patient/" + urlParams.get("id")
+        )
+        .then((response) => {
+          this.first_name = response.data.first_name;
+          this.last_name = response.data.last_name;
+          this.relation_state = response.data.Relationship_Status;
+          this.address = response.data.address;
+          this.city = response.data.city;
+          this.country = response.data.country;
+          this.date_of_birth = response.data.dob;
+          this.email = response.data.email;
+          this.gender = response.data.gender;
+          this.id = response.data.id;
+          this.mobile = response.data.mobile;
+          this.zipcode = response.data.zipcode;
+          if (response.data.old) {
+            this.old_history = response.data.old;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+  mounted() {
+    if (this.type == "Edit") {
+      this.getdata();
+    }
   },
 };
 </script>

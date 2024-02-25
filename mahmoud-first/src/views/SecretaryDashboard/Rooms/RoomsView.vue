@@ -11,41 +11,37 @@
 
 <script>
 import TableComponent from "@/components/DashboardAll/TableComponent.vue";
+import axios from "axios";
 export default {
   name: "rooms-view",
   data() {
     return {
-      data_array: {
-        0: {
-          id: 1,
-          number: "101",
-          state: "available",
-        },
-        1: {
-          id: 2,
-          number: "201",
-          state: "available",
-        },
-        2: {
-          id: 3,
-          number: "301",
-          state: "not available",
-        },
-        3: {
-          id: 4,
-          number: "401",
-          state: "available",
-        },
-        4: {
-          id: 5,
-          number: "501",
-          state: "available",
-        },
-      },
+      data_array: {},
     };
   },
   components: {
     TableComponent,
+  },
+  methods: {
+    geddata() {
+      axios
+        .get("http://127.0.0.1:8000/api/ward_index")
+        .then((response) => {
+          for (var i = 0; i < response.data.length; i++) {
+            this.data_array[i] = {
+              id: response.data[i].id,
+              number: response.data[i].number,
+              state: response.data[i].status,
+            };
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+  mounted() {
+    this.geddata();
   },
 };
 </script>

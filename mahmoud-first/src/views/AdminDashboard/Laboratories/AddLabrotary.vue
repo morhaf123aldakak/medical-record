@@ -80,7 +80,9 @@
           </div>
         </div>
         <div class="col-12">
-          <button type="button" class="submit_btn">Add Laprotary</button>
+          <button type="button" class="submit_btn" @click="add()">
+            Add Laprotary
+          </button>
         </div>
       </div>
     </AdminSidebar>
@@ -89,6 +91,9 @@
 
 <script>
 import AdminSidebar from "@/components/AdminDashboard/AdminSidebar.vue";
+import axios from "axios";
+import router from "@/router";
+
 export default {
   name: "add-labrotary",
   data() {
@@ -100,28 +105,74 @@ export default {
       department: "",
       department_id: 0,
       note: "",
-      all_departments: {
-        0: {
-          id: 1,
-          name: "Teeth",
-        },
-        1: {
-          id: 2,
-          name: "Nose",
-        },
-        2: {
-          id: 3,
-          name: "Ear",
-        },
-        3: {
-          id: 4,
-          name: "Chest",
-        },
-      },
+      all_departments: {},
     };
   },
   components: {
     AdminSidebar,
+  },
+  methods: {
+    add() {
+      if (this.mobile == "") {
+        alert("Enter mobile");
+        return;
+      } else if (this.phone == "") {
+        alert("Enter phone");
+        return;
+      } else if (this.email == "") {
+        alert("Enter email");
+        return;
+      } else if (this.address == "") {
+        alert("Enter address");
+        return;
+      } else if (this.note == "") {
+        alert("Enter note");
+        return;
+      } else if (this.department == "") {
+        alert("Enter department");
+        return;
+      }
+      const formData = new FormData();
+
+      formData.append("lap_mobile", parseInt(this.mobile));
+      formData.append("lap_email", this.email);
+      formData.append("lap_address", this.address);
+      formData.append("lap_phone", parseInt(this.phone));
+      formData.append("note", this.note);
+      formData.append("hospital_dep_id", this.department_id);
+
+      axios
+        .post("http://127.0.0.1:8000/api/store_lab", formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
+        .then((response) => {
+          alert(response.data.lap_address + " has added successfully");
+          router.push("/Admin-Labs");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    getdata() {
+      axios
+        .get("http://127.0.0.1:8000/api/dept-index")
+        .then((response) => {
+          for (var i = 0; i < response.data.length; i++) {
+            this.all_departments[i] = {
+              id: response.data[i].id,
+              name: response.data[i].name,
+            };
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+  mounted() {
+    this.getdata();
   },
 };
 </script>
